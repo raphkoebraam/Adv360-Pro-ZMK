@@ -184,6 +184,36 @@
             bindings = <&caps_word>;
             key-positions = <32 41>;
         };
+
+        combo_copy {
+            bindings = <&kp LG(C)>;
+            key-positions = <48 49>;
+        };
+
+        combo_paste {
+            bindings = <&kp LG(V)>;
+            key-positions = <49 50>;
+        };
+
+        combo_cut {
+            bindings = <&kp LG(X)>;
+            key-positions = <47 48>;
+        };
+
+        combo_select_all {
+            bindings = <&kp LG(A)>;
+            key-positions = <47 50>;
+        };
+
+        combo_undo {
+            bindings = <&kp LG(Z)>;
+            key-positions = <48 50>;
+        };
+
+        combo_redo {
+            bindings = <&kp LS(LG(Z))>;
+            key-positions = <47 49>;
+        };
     };
 
     keymap {
