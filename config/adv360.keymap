@@ -185,6 +185,11 @@
             key-positions = <32 41>;
         };
 
+        combo_caps_lock {
+            bindings = <&kp CAPSLOCK>;
+            key-positions = <50 55>;
+        };
+
         /*
         lh_combo_copy {
             bindings = <&kp LG(C)>;
@@ -245,7 +250,7 @@
             bindings = <&kp LS(LG(Z))>;
             key-positions = <24 26>;
         };      
-        */  
+        */
     };
 
     keymap {
