@@ -185,6 +185,7 @@
             key-positions = <32 41>;
         };
 
+        /*
         lh_combo_copy {
             bindings = <&kp LG(C)>;
             key-positions = <16 17>;
@@ -243,7 +244,8 @@
         rh_combo_redo {
             bindings = <&kp LS(LG(Z))>;
             key-positions = <24 26>;
-        };        
+        };      
+        */  
     };
 
     keymap {
