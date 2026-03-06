@@ -172,16 +172,19 @@ Accessible via mo 3 (position 7).
 
 ## Combos
 
-| Combo | Keys | Action | Status |
-|-------|------|--------|--------|
-| caps_word | F+J (32+41) | Caps Word | Active |
-| caps_lock | V+M (50+55) | Caps Lock | Active |
-| copy | W+E / I+O (16+17 / 24+25) | Cmd+C | Disabled (misfires) |
-| paste | E+R / U+I (17+18 / 23+24) | Cmd+V | Disabled (misfires) |
-| cut | Q+W / O+P (15+16 / 25+26) | Cmd+X | Disabled (misfires) |
-| select all | Q+R / U+P (15+18 / 23+26) | Cmd+A | Disabled (misfires) |
-| undo | W+R / U+O (16+18 / 23+25) | Cmd+Z | Disabled (misfires) |
-| redo | Q+E / I+P (15+17 / 24+26) | Cmd+Shift+Z | Disabled (misfires) |
+| Combo | Left hand | Right hand | Action | Status |
+|-------|-----------|------------|--------|--------|
+| caps_word | F+J (32+41) | — | Caps Word | Active |
+| caps_lock | V+M (50+55) | — | Caps Lock | Active |
+| cut | Q+W (15+16) | O+P (25+26) | Cmd+X | Active |
+| copy | W+E (16+17) | I+O (24+25) | Cmd+C | Active |
+| paste | E+R (17+18) | U+I (23+24) | Cmd+V | Active |
+| undo | W+R (16+18) | U+O (23+25) | Cmd+Z | Active |
+| redo | Q+E (15+17) | I+P (24+26) | Cmd+Shift+Z | Active |
+| select all | Q+R (15+18) | U+P (23+26) | Cmd+A | Active |
+
+All combos use `timeout-ms = <40>` and `require-prior-idle-ms = <150>` to prevent misfires.
+Row above home (QWER/UIOP) chosen over home row to avoid interference with home row mods.
 
 
 ## Macros (defined in macros.dtsi)
@@ -221,8 +224,8 @@ No changes needed for compatibility. ABC is strictly better for this layout.
 
 | # | Change | Priority | Status |
 |---|--------|----------|--------|
-| 1 | Timeless home row mods (move mods back to ASDF/JKL;) | Critical | Pending |
-| 2 | Fix and re-enable combos with require-prior-idle-ms | Critical | Pending |
+| 1 | Timeless home row mods (move mods back to ASDF/JKL;) | Critical | Done |
+| 2 | Fix and re-enable combos with require-prior-idle-ms | Critical | Done |
 | 3 | Add Nav/Symbol layer (vim arrows + direct symbols) | High | Pending |
 | 4 | Add code macros (->, =>, ::, .., ??) | Medium | Pending |
 | 5 | Bind existing auto-pair macros | Medium | Pending |
