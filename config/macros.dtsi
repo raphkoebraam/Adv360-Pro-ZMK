@@ -34,3 +34,33 @@
     #binding-cells = <0>;
     bindings = <&kp LS(K)>, <&kp I>, <&kp N>, <&kp E>, <&kp S>, <&kp I>, <&kp S>;
   };
+  macro_thin_arrow: macro_thin_arrow {
+    compatible = "zmk,behavior-macro";
+    label = "macro_thin_arrow";
+    #binding-cells = <0>;
+    bindings = <&kp MINUS>, <&kp GREATER_THAN>;
+  };
+  macro_fat_arrow: macro_fat_arrow {
+    compatible = "zmk,behavior-macro";
+    label = "macro_fat_arrow";
+    #binding-cells = <0>;
+    bindings = <&kp EQUAL>, <&kp GREATER_THAN>;
+  };
+  macro_double_colon: macro_double_colon {
+    compatible = "zmk,behavior-macro";
+    label = "macro_double_colon";
+    #binding-cells = <0>;
+    bindings = <&kp COLON>, <&kp COLON>;
+  };
+  macro_range: macro_range {
+    compatible = "zmk,behavior-macro";
+    label = "macro_range";
+    #binding-cells = <0>;
+    bindings = <&kp DOT>, <&kp DOT>;
+  };
+  macro_nil_coalesce: macro_nil_coalesce {
+    compatible = "zmk,behavior-macro";
+    label = "macro_nil_coalesce";
+    #binding-cells = <0>;
+    bindings = <&kp QMARK>, <&kp QMARK>;
+  };

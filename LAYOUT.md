@@ -226,8 +226,8 @@ No changes needed for compatibility. ABC is strictly better for this layout.
 |---|--------|----------|--------|
 | 1 | Timeless home row mods (move mods back to ASDF/JKL;) | Critical | Done |
 | 2 | Fix and re-enable combos with require-prior-idle-ms | Critical | Done |
-| 3 | Add Nav/Symbol layer (vim arrows + direct symbols) | High | Pending |
-| 4 | Add code macros (->, =>, ::, .., ??) | Medium | Pending |
+| 3 | Add Nav/Symbol layer (vim arrows + direct symbols) | High | Done |
+| 4 | Add code macros (->, =>, ::, .., ??) | Medium | Done |
 | 5 | Bind existing auto-pair macros | Medium | Pending |
 | 6 | Reconsider right thumb $ tap | Low | Pending |
 
@@ -503,51 +503,58 @@ combos {
   feel too hard to trigger.
 
 
-## Upgrade 3: Nav/Symbol Layer (HIGH) — TODO: DESIGN PENDING
+## Upgrade 3: Nav/Symbol Layer (HIGH) — DONE
 
-### Problem
-Arrow keys require leaving home position. Common symbols need Shift or reach to
-the edges. No vim-style navigation available.
+Replaces the keypad layer (Layer 1). Activated by holding Return (pos 65) or
+Space (pos 70). Inspired by Sunaku's Glove80 symbol layer — bracket pairs
+adjacent, most-used symbols on home row, logical groupings by category.
 
-### Design Principles (agreed)
-- Replace Layer 1 (keypad, right side) or create new dedicated layer
-- Activated by holding Space (position 70, currently `lt 1 SPACE`)
-- **Right hand home row**: vim arrows (HJKL = Left/Down/Up/Right)
-- **Right hand below home**: Home/PgDn/PgUp/End
-- **Left hand home row**: most-used symbols as direct taps (`_`, `&`, `|`, `!`)
-- **Left hand row above home**: `#`, `<`, `>`, `?`
-- **Left hand row below home**: code macros (`->`, `=>`, `::`, `..`, `??`)
-- **No modifiers on this layer** — symbols only, keep it simple
-- Numbers stay on the number row for when needed
-- Right hand edges (`;`/`'` positions): `+` and `=`
+### Layout
 
-### Detailed layout: to be defined after Upgrades 1 and 2 are implemented.
+```
+LEFT HAND (symbols)                                          RIGHT HAND (navigation)
+Row 0:  ~      `      [      ]      $      %   [trans]     [trans]  ---    ---    ---    ---    ---    ---
+Row 1:  #      <      (      )      >      @   [trans]     [trans]  ---    ---    ---    ---    ---    ---
+Row 2:  ---    _      {      }      !      ?   [trans] [t][t] [t][t] [trans]  Left  Down   Up   Right   +      =
+Row 3:  ---    ->     =>     ::     ..     ??          [t][t]              Home  PgDn  PgUp   End   ---    ---
+Row 4:  ---    &      |      ^      *           [trans][t][t] [t][t][trans]      ---    ---    ---    ---    ---
+```
+
+### Left Hand — Symbol Groupings
+
+| Row | Keys | Logic |
+|-----|------|-------|
+| Row 0 | `~` `` ` `` `[` `]` `$` `%` | Utility: backtick/tilde + square brackets + money/math |
+| Row 1 | `#` `<` `(` `)` `>` `@` | Brackets: angle brackets frame parens, `#` and `@` on edges |
+| Row 2 | `_` `{` `}` `!` `?` | Home row: most-used symbols (underscore, braces, logic) |
+| Row 3 | `->` `=>` `::` `..` `??` | Code macros: Swift/Rust/ObjC multi-char operators |
+| Row 4 | `&` `|` `^` `*` | Bitwise/pointer operators |
+
+### Right Hand — Vim Navigation
+
+| Row | Keys | Logic |
+|-----|------|-------|
+| Row 2 | Left Down Up Right `+` `=` | Vim arrows on HJKL, operators on edges |
+| Row 3 | Home PgDn PgUp End | Page navigation mirrors vim (J=down, below J=PgDn) |
+
+All other right-hand keys are `&trans` (fall through to default layer).
+All thumb/inner keys are `&trans` (Return, Tab, Backspace, Space still work).
 
 
-## Upgrade 4: Code Macros for Swift/ObjC/Rust (MEDIUM)
+## Upgrade 4: Code Macros for Swift/ObjC/Rust (MEDIUM) — DONE
 
-### Macros to Add
+Macros defined in `macros.dtsi` and bound on the nav/symbol layer (Row 3, left hand).
 
-| Macro | Output | Primary Use |
-|-------|--------|-------------|
-| macro_thin_arrow | `->` | Swift/Rust fn return types, ObjC pointer member |
-| macro_fat_arrow | `=>` | Rust match arms |
-| macro_double_colon | `::` | Rust path separator (std::io::Result) |
-| macro_range | `..` | Rust ranges (0..10) |
-| macro_nil_coalesce | `??` | Swift nil coalescing |
-| macro_pipe_op | `\|\|` | Logical OR |
-| macro_and_op | `&&` | Logical AND |
+| Macro | Output | Layer Position | Primary Use |
+|-------|--------|----------------|-------------|
+| macro_thin_arrow | `->` | Z position (47) | Swift/Rust fn return types, ObjC pointer member |
+| macro_fat_arrow | `=>` | X position (48) | Rust match arms |
+| macro_double_colon | `::` | C position (49) | Rust path separator (std::io::Result) |
+| macro_range | `..` | V position (50) | Rust ranges (0..10) |
+| macro_nil_coalesce | `??` | B position (51) | Swift nil coalescing |
 
-### Binding Suggestions
-These could be placed on the nav/symbol layer or as combos:
-- `->` on a combo: `.` + `/` (right hand bottom row, adjacent)
-- `=>` on a combo: `,` + `.` (right hand bottom row, adjacent)
-- `::` on a combo: `;` + `'` (right hand home row, adjacent) or on nav layer
-
-Alternatively, bind on the nav/symbol layer using keys that hint at the output:
-- `-` position = `->` (starts with minus)
-- `=` position = `=>` (starts with equals)
-- `;` position = `::` (related to colon)
+`||` and `&&` were not implemented — they're only 2 keypresses anyway and would
+add complexity without significant benefit.
 
 
 ## Upgrade 5: Bind Existing Auto-Pair Macros (MEDIUM)
