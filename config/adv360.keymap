@@ -28,20 +28,6 @@
             bindings = <&kp RET>;
         };
 
-        dot_dot: dot_dot {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp DOT &kp DOT>;
-            label = "DOT_DOT";
-        };
-
-        triple_backtick: triple_backtick {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp GRAVE &kp GRAVE &kp GRAVE>;
-            label = "TRIPLE_BACKTICK";
-        };
-
         #endif
 
         hmr: home_row_mods_right {
