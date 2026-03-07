@@ -19,59 +19,36 @@
 #define _CUT    _C(X)
 #define _COPY   _C(C)
 #define _PASTE  _C(V)
-#define _FIND   _C(F)
+#define _FIND       _C(F)
+#define _FIND_NEXT  _C(G)
+#define _FIND_PREV  _C(LS(G))
+#define _FILES      LS(LA(M))
+#define _SLEEP      C_SLEEP
 
 // Select word/line delay
 #define SELECT_WORD_DELAY 1
 
-// Base layers
-#define LAYER_QWERTY      0
-#define LAYER_Dvorak      1
-#define LAYER_Colemak     2
-
-// OS-specific overlay
-#define LAYER_macOS       3
-
-// Typing mode (no home row mods)
-#define LAYER_Typing      4
-
-// Bilateral enforcement layers
-#define LAYER_LeftPinky   5
-#define LAYER_LeftRingy   6
-#define LAYER_LeftMiddy   7
-#define LAYER_LeftIndex   8
-#define LAYER_RightIndex  9
-#define LAYER_RightMiddy  10
-#define LAYER_RightRingy  11
-#define LAYER_RightPinky  12
-
-// Gaming
-#define LAYER_Gaming      13
-
-// Functional layers (left thumb access)
-#define LAYER_Cursor      14
-#define LAYER_Number      15
-#define LAYER_Function    16
-
-// macOS cursor/number/function variant
-#define LAYER_macOS_left  17
-
-// Functional layers (right thumb access)
-#define LAYER_Symbol      18
-#define LAYER_System      19
-
-// macOS symbol/system variant
-#define LAYER_macOS_right 20
-
-// Factory
-#define LAYER_Factory     21
-
-// Lower + macOS lower
-#define LAYER_Lower       22
-#define LAYER_macOS_lower 23
-
-// Mod (BT, bootloader, RGB)
-#define LAYER_Mod         24
+// Layer ordering — compact for now, expand as phases are implemented
+//
+// Phase 2 core layers:
+#define LAYER_QWERTY      0   // default base layer (kept)
+#define LAYER_Cursor      1   // arrows, navigation (replaces keypad)
+#define LAYER_Number      2   // numpad, hex (replaces fn)
+#define LAYER_Mod         3   // BT, bootloader, RGB (kept as-is)
+#define LAYER_Symbol      4   // programming symbols (replaces nav_symbol)
+#define LAYER_Function    5   // F-keys, media (new)
+#define LAYER_System      6   // system controls (new)
+#define LAYER_Lower       7   // layer toggles, sticky mods (new)
+//
+// Future phases (uncomment and renumber as implemented):
+// #define LAYER_Dvorak
+// #define LAYER_Colemak
+// #define LAYER_macOS
+// #define LAYER_Typing
+// #define LAYER_LeftPinky .. LAYER_RightPinky (bilateral)
+// #define LAYER_Gaming
+// #define LAYER_Factory
+// #define LAYER_macOS_left / LAYER_macOS_right / LAYER_macOS_lower
 
 // Finger mod assignments (macOS: CAGS — Ctrl, Alt, Gui, Shift)
 #define LEFT_PINKY_MOD  LCTL
