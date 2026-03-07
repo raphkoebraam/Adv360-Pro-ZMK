@@ -69,7 +69,7 @@
 #define RIGHT_RINGY_MOD LALT
 #define RIGHT_PINKY_MOD LCTL
 
-// Home row key codes (QWERTY)
+// Home row key codes (QWERTY) — used on non-mod layers (Cursor, etc.)
 #define LEFT_PINKY_KEY  A
 #define LEFT_RINGY_KEY  S
 #define LEFT_MIDDY_KEY  D
@@ -78,6 +78,17 @@
 #define RIGHT_MIDDY_KEY K
 #define RIGHT_RINGY_KEY L
 #define RIGHT_PINKY_KEY SEMI
+
+// Mod row key codes — the actual keys where HRMs are placed (below-home row)
+// Used by bilateral _tap macros to reconstruct the "intended" keystroke
+#define LEFT_PINKY_TAP_KEY  Z
+#define LEFT_RINGY_TAP_KEY  X
+#define LEFT_MIDDY_TAP_KEY  C
+#define LEFT_INDEX_TAP_KEY  V
+#define RIGHT_INDEX_TAP_KEY M
+#define RIGHT_MIDDY_TAP_KEY COMMA
+#define RIGHT_RINGY_TAP_KEY DOT
+#define RIGHT_PINKY_TAP_KEY FSLH
 
 //
 // Kinesis Adv360 key positions (76 keys)
