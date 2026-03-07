@@ -476,7 +476,7 @@
 &kp EQUAL   &kp NUMBER_1                      &kp NUMBER_2                    &kp NUMBER_3                    &kp NUMBER_4                       &kp NUMBER_5  &none                                                                                                                                        &mo LAYER_Mod    &kp NUMBER_6  &kp NUMBER_7                       &kp NUMBER_8                    &kp NUMBER_9                    &kp NUMBER_0                      &kp MINUS
 &kp LS(N2)  &kp Q                             &kp W                           &kp E                           &kp R                              &kp T         &kp LG(LS(N3))                                                                                                                   &kp LG(LS(N5))  &kp Y         &kp U                              &kp I                           &kp O                           &kp P                             &kp BSLH
 &kp ESCAPE  &kp A                             &kp S                           &kp D                           &left_index LS(LA(LC(LGUI))) F     &kp G         &kp LG(LS(N4))  &kp GRAVE  &key_lh_t2                                    &kp EQUAL                    &key_rh_t2     &kp LC(LG(Q))   &kp H         &right_index LS(LA(LC(LGUI))) J    &kp K                           &kp L                           &kp SEMI                          &kp SQT
-&kp LSHFT   &left_pinky LEFT_PINKY_MOD Z      &left_ringy LEFT_RINGY_MOD X    &left_middy LEFT_MIDDY_MOD C    &left_index LEFT_INDEX_MOD V       &kp B                                    &thumb LAYER_Function ESC &thumb LAYER_Lower DELETE                                       &kp N         &right_index RIGHT_INDEX_MOD M     &right_middy RIGHT_MIDDY_MOD COMMA &right_ringy RIGHT_RINGY_MOD DOT &right_pinky RIGHT_PINKY_MOD FSLH &kp RSHFT
+&kp LSHFT   &HRM_LEFT_PINKY(Z)                &HRM_LEFT_RINGY(X)              &HRM_LEFT_MIDDY(C)              &HRM_LEFT_INDEX(V)                 &kp B                                    &thumb LAYER_Function ESC &thumb LAYER_Lower DELETE                                       &kp N         &HRM_RIGHT_INDEX(M)                &HRM_RIGHT_MIDDY(COMMA)         &HRM_RIGHT_RINGY(DOT)           &HRM_RIGHT_PINKY(FSLH)            &kp RSHFT
 &mo LAYER_Mod &kp END                         &kp PAGE_UP                     &kp PAGE_DOWN                   &kp HOME                                         &thumb LAYER_Cursor RETURN  &thumb LAYER_Number TAB  &kp BACKSPACE  &thumb LAYER_System RETURN  &kp BACKSPACE  &thumb LAYER_Symbol SPACE                   &kp LEFT                           &kp DOWN                        &kp UP                          &kp RIGHT                         &mo LAYER_Mod
             >;
         };
@@ -655,6 +655,98 @@
         kinesis_extra4 {
             display-name = "Yellow";
             status = "reserved";
+        };
+
+        // =====================================================================
+        // Bilateral enforcement layers (8 layers, one per finger)
+        //
+        // How it works:
+        // - Hold a home row mod key (e.g., Z = Ctrl on left pinky)
+        // - The _hold macro presses Ctrl AND activates this layer
+        // - Same-hand keys: _tap macro releases Ctrl, types the held key (Z)
+        //   then types the tapped key — cancelling the modifier
+        // - Opposite-hand keys: &trans — Ctrl passes through normally
+        // - Result: only cross-hand modifier combos work
+        // =====================================================================
+
+        layer_LeftPinky {
+            bindings = <
+&left_pinky_tap EQUAL   &left_pinky_tap N1      &left_pinky_tap N2      &left_pinky_tap N3      &left_pinky_tap N4      &left_pinky_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_pinky_tap LS(N2)  &left_pinky_tap Q       &left_pinky_tap W       &left_pinky_tap E       &left_pinky_tap R       &left_pinky_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_pinky_tap ESC     &left_pinky_tap A       &left_pinky_tap S       &left_pinky_tap D       &left_pinky_tap F       &left_pinky_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &none                   &left_pinky_tap X       &left_pinky_tap C       &left_pinky_tap V       &left_pinky_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_pinky_tap END     &left_pinky_tap PG_UP   &left_pinky_tap PG_DN   &left_pinky_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_LeftRingy {
+            bindings = <
+&left_ringy_tap EQUAL   &left_ringy_tap N1      &left_ringy_tap N2      &left_ringy_tap N3      &left_ringy_tap N4      &left_ringy_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_ringy_tap LS(N2)  &left_ringy_tap Q       &left_ringy_tap W       &left_ringy_tap E       &left_ringy_tap R       &left_ringy_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_ringy_tap ESC     &left_ringy_tap A       &left_ringy_tap S       &left_ringy_tap D       &left_ringy_tap F       &left_ringy_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_ringy_tap Z       &none                   &left_ringy_tap C       &left_ringy_tap V       &left_ringy_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_ringy_tap END     &left_ringy_tap PG_UP   &left_ringy_tap PG_DN   &left_ringy_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_LeftMiddy {
+            bindings = <
+&left_middy_tap EQUAL   &left_middy_tap N1      &left_middy_tap N2      &left_middy_tap N3      &left_middy_tap N4      &left_middy_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_middy_tap LS(N2)  &left_middy_tap Q       &left_middy_tap W       &left_middy_tap E       &left_middy_tap R       &left_middy_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_middy_tap ESC     &left_middy_tap A       &left_middy_tap S       &left_middy_tap D       &left_middy_tap F       &left_middy_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_middy_tap Z       &left_middy_tap X       &none                   &left_middy_tap V       &left_middy_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_middy_tap END     &left_middy_tap PG_UP   &left_middy_tap PG_DN   &left_middy_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_LeftIndex {
+            bindings = <
+&left_index_tap EQUAL   &left_index_tap N1      &left_index_tap N2      &left_index_tap N3      &left_index_tap N4      &left_index_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_index_tap LS(N2)  &left_index_tap Q       &left_index_tap W       &left_index_tap E       &left_index_tap R       &left_index_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&left_index_tap ESC     &left_index_tap A       &left_index_tap S       &left_index_tap D       &left_index_tap F       &left_index_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_index_tap Z       &left_index_tap X       &left_index_tap C       &none                   &left_index_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_index_tap END     &left_index_tap PG_UP   &left_index_tap PG_DN   &left_index_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        layer_RightIndex {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_index_tap N6      &right_index_tap N7      &right_index_tap N8      &right_index_tap N9      &right_index_tap N0      &right_index_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_index_tap Y       &right_index_tap U       &right_index_tap I       &right_index_tap O       &right_index_tap P       &right_index_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_index_tap H       &right_index_tap J       &right_index_tap K       &right_index_tap L       &right_index_tap SEMI    &right_index_tap SQT
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_index_tap N       &none                    &right_index_tap COMMA   &right_index_tap DOT     &right_index_tap FSLH    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_index_tap LEFT    &right_index_tap DOWN    &right_index_tap UP      &right_index_tap RIGHT   &trans
+            >;
+        };
+
+        layer_RightMiddy {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_middy_tap N6      &right_middy_tap N7      &right_middy_tap N8      &right_middy_tap N9      &right_middy_tap N0      &right_middy_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_middy_tap Y       &right_middy_tap U       &right_middy_tap I       &right_middy_tap O       &right_middy_tap P       &right_middy_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_middy_tap H       &right_middy_tap J       &right_middy_tap K       &right_middy_tap L       &right_middy_tap SEMI    &right_middy_tap SQT
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_middy_tap N       &right_middy_tap M       &none                    &right_middy_tap DOT     &right_middy_tap FSLH    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_middy_tap LEFT    &right_middy_tap DOWN    &right_middy_tap UP      &right_middy_tap RIGHT   &trans
+            >;
+        };
+
+        layer_RightRingy {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_ringy_tap N6      &right_ringy_tap N7      &right_ringy_tap N8      &right_ringy_tap N9      &right_ringy_tap N0      &right_ringy_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_ringy_tap Y       &right_ringy_tap U       &right_ringy_tap I       &right_ringy_tap O       &right_ringy_tap P       &right_ringy_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_ringy_tap H       &right_ringy_tap J       &right_ringy_tap K       &right_ringy_tap L       &right_ringy_tap SEMI    &right_ringy_tap SQT
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_ringy_tap N       &right_ringy_tap M       &right_ringy_tap COMMA   &none                    &right_ringy_tap FSLH    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_ringy_tap LEFT    &right_ringy_tap DOWN    &right_ringy_tap UP      &right_ringy_tap RIGHT   &trans
+            >;
+        };
+
+        layer_RightPinky {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_pinky_tap N6      &right_pinky_tap N7      &right_pinky_tap N8      &right_pinky_tap N9      &right_pinky_tap N0      &right_pinky_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_pinky_tap Y       &right_pinky_tap U       &right_pinky_tap I       &right_pinky_tap O       &right_pinky_tap P       &right_pinky_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_pinky_tap H       &right_pinky_tap J       &right_pinky_tap K       &right_pinky_tap L       &right_pinky_tap SEMI    &right_pinky_tap SQT
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_pinky_tap N       &right_pinky_tap M       &right_pinky_tap COMMA   &right_pinky_tap DOT     &none                    &trans
+&trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_pinky_tap LEFT    &right_pinky_tap DOWN    &right_pinky_tap UP      &right_pinky_tap RIGHT   &trans
+            >;
         };
     };
 };
