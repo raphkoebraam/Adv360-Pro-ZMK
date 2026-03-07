@@ -281,43 +281,56 @@ These 6 keys exist on Kinesis but not on Glove80's equivalent rows.
 
 ## 7. Implementation TODO
 
+### Current layer numbering (compact, will expand)
+| # | Layer | Notes |
+|---|-------|-------|
+| 0 | QWERTY | default base layer |
+| 1 | Cursor | arrows, navigation, select word/line |
+| 2 | Number | numpad, hex, operators |
+| 3 | Mod | BT, bootloader, RGB (kept from original) |
+| 4 | Symbol | programming symbols |
+| 5 | Function | F-keys, media, brightness |
+| 6 | System | RGB, locks, system controls |
+| 7 | Lower | layer toggles, sticky mods |
+
 ### Phase 1: Foundation
 | # | Task | Status |
 |---|------|--------|
-| 1.1 | Define all layer `#define` constants | Pending |
-| 1.2 | Create 8 per-finger hold-tap behaviors (hml_pinky..hmr_index) | Pending |
-| 1.3 | Port macros from sunaku (select_all, select_line, select_word, dot_dot, triple_backtick, etc.) | Pending |
-| 1.4 | Port helper behaviors (mod-morphs, tap-dances, sticky keys) | Pending |
+| 1.1 | Define layer `#define` constants + key positions | Done |
+| 1.2 | Create 8 per-finger hold-tap behaviors | Done |
+| 1.3 | Port macros (select_word, select_line, mod_tab, etc.) | Done |
+| 1.4 | Port helper behaviors (sticky keys) | Done |
 
 ### Phase 2: Core layers
 | # | Task | Status |
 |---|------|--------|
-| 2.1 | Implement QWERTY base layer (layer 0) with per-finger HRMs | Pending |
-| 2.2 | Implement Cursor layer (14) | Pending |
-| 2.3 | Implement Number layer (15) | Pending |
-| 2.4 | Implement Function layer (16) | Pending |
-| 2.5 | Implement Symbol layer (18) | Pending |
+| 2.1 | QWERTY base layer with per-finger HRMs + thumb layer-tap | Done |
+| 2.2 | Cursor layer (1) | Done |
+| 2.3 | Number layer (2) | Done |
+| 2.4 | Function layer (5) | Done |
+| 2.5 | Symbol layer (4) | Done |
+| 2.6 | System layer (6) | Done |
+| 2.7 | Lower layer (7) | Done |
 
 ### Phase 3: Infrastructure
 | # | Task | Status |
 |---|------|--------|
-| 3.1 | Implement 8 bilateral enforcement layers (5-12) | Pending |
-| 3.2 | Implement Lower layer (22) with toggles and sticky mods | Pending |
-| 3.3 | Implement System layer (19) / Mod layer (24) | Pending |
-| 3.4 | Implement all combos (thumb combos, caps_word, etc.) | Pending |
+| 3.1 | Implement 8 bilateral enforcement layers | Pending |
+| 3.2 | Implement sunaku-style thumb combos | Pending |
+| 3.3 | Update existing combos to use layer defines | Pending |
 
 ### Phase 4: Extra layers
 | # | Task | Status |
 |---|------|--------|
-| 4.1 | Implement Dvorak base layer (1) | Pending |
-| 4.2 | Implement Colemak base layer (2) | Pending |
-| 4.3 | Implement macOS layer (3) + macOS_left (17) + macOS_right (20) + macOS_lower (23) | Pending |
-| 4.4 | Implement Typing layer (4) | Pending |
-| 4.5 | Implement Gaming layer (13) | Pending |
-| 4.6 | Implement Factory layer (21) | Pending |
+| 4.1 | Implement Dvorak base layer | Pending |
+| 4.2 | Implement Colemak base layer | Pending |
+| 4.3 | Implement macOS overlay layers | Pending |
+| 4.4 | Implement Typing layer (no HRMs) | Pending |
+| 4.5 | Implement Gaming layer | Pending |
+| 4.6 | Implement Factory layer | Pending |
 
 ### Phase 5: Sync & tooling
 | # | Task | Status |
 |---|------|--------|
 | 5.1 | Sync all changes to Glove80 config | Pending |
-| 5.2 | Build translation script (Kinesis <-> Glove80) -- shell or Swift, decide then | Pending |
+| 5.2 | Build translation script (Kinesis <-> Glove80) -- shell or Swift | Pending |
