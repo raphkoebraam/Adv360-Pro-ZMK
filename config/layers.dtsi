@@ -40,12 +40,21 @@
 #define LAYER_System      6   // system controls (new)
 #define LAYER_Lower       7   // layer toggles, sticky mods (new)
 //
+// Bilateral enforcement layers:
+#define LAYER_LeftPinky    8
+#define LAYER_LeftRingy    9
+#define LAYER_LeftMiddy   10
+#define LAYER_LeftIndex   11
+#define LAYER_RightIndex  12
+#define LAYER_RightMiddy  13
+#define LAYER_RightRingy  14
+#define LAYER_RightPinky  15
+//
 // Future phases (uncomment and renumber as implemented):
 // #define LAYER_Dvorak
 // #define LAYER_Colemak
 // #define LAYER_macOS
 // #define LAYER_Typing
-// #define LAYER_LeftPinky .. LAYER_RightPinky (bilateral)
 // #define LAYER_Gaming
 // #define LAYER_Factory
 // #define LAYER_macOS_left / LAYER_macOS_right / LAYER_macOS_lower
@@ -126,3 +135,24 @@
 
 // Bilateral enforcement (uncomment to enable)
 //#define ENFORCE_BILATERAL
+
+// Base layer HRM macros — switch between bilateral and standard variants
+#ifdef ENFORCE_BILATERAL
+  #define HRM_LEFT_PINKY(key)  left_pinky_bilateral LEFT_PINKY_MOD key
+  #define HRM_LEFT_RINGY(key)  left_ringy_bilateral LEFT_RINGY_MOD key
+  #define HRM_LEFT_MIDDY(key)  left_middy_bilateral LEFT_MIDDY_MOD key
+  #define HRM_LEFT_INDEX(key)  left_index_bilateral LEFT_INDEX_MOD key
+  #define HRM_RIGHT_INDEX(key) right_index_bilateral RIGHT_INDEX_MOD key
+  #define HRM_RIGHT_MIDDY(key) right_middy_bilateral RIGHT_MIDDY_MOD key
+  #define HRM_RIGHT_RINGY(key) right_ringy_bilateral RIGHT_RINGY_MOD key
+  #define HRM_RIGHT_PINKY(key) right_pinky_bilateral RIGHT_PINKY_MOD key
+#else
+  #define HRM_LEFT_PINKY(key)  left_pinky LEFT_PINKY_MOD key
+  #define HRM_LEFT_RINGY(key)  left_ringy LEFT_RINGY_MOD key
+  #define HRM_LEFT_MIDDY(key)  left_middy LEFT_MIDDY_MOD key
+  #define HRM_LEFT_INDEX(key)  left_index LEFT_INDEX_MOD key
+  #define HRM_RIGHT_INDEX(key) right_index RIGHT_INDEX_MOD key
+  #define HRM_RIGHT_MIDDY(key) right_middy RIGHT_MIDDY_MOD key
+  #define HRM_RIGHT_RINGY(key) right_ringy RIGHT_RINGY_MOD key
+  #define HRM_RIGHT_PINKY(key) right_pinky RIGHT_PINKY_MOD key
+#endif

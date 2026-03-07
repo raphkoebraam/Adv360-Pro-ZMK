@@ -203,6 +203,106 @@
             hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         };
 
+        // Bilateral enforcement hold-tap behaviors
+        // Same timing as standard per-finger behaviors, but hold action
+        // uses _hold macro (press mod + activate bilateral layer)
+
+        left_pinky_bilateral: homey_left_pinky_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&left_pinky_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <PINKY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        left_ringy_bilateral: homey_left_ringy_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&left_ringy_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <RINGY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        left_middy_bilateral: homey_left_middy_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&left_middy_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <MIDDY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        left_index_bilateral: homey_left_index_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&left_index_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <INDEX_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_index_bilateral: homey_right_index_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&right_index_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <INDEX_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_middy_bilateral: homey_right_middy_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&right_middy_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <MIDDY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_ringy_bilateral: homey_right_ringy_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&right_ringy_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <RINGY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_pinky_bilateral: homey_right_pinky_bilateral {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&right_pinky_hold>, <&kp>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <PINKY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
         // Thumb cluster layer-tap
         thumb: thumb_layer_access {
             compatible = "zmk,behavior-hold-tap";
