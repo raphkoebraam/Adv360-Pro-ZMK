@@ -621,11 +621,56 @@
 
         layer_Lower {
             bindings = <
-&none  &none               &none               &none               &none               &none          &trans                                                                                                                      &trans              &none                &none                &none                &none                &none   &none
+&to LAYER_Factory  &to LAYER_QWERTY  &to LAYER_Dvorak  &to LAYER_Colemak  &none  &none   &trans                                                                                                                      &trans              &none                &none                &to LAYER_Colemak    &to LAYER_Dvorak     &to LAYER_QWERTY  &to LAYER_Factory
 &none  &kp KP_N1           &kp KP_N2           &kp KP_N3           &kp KP_N4           &kp KP_N5      &trans                                                                                                                      &trans              &kp KP_N6            &kp KP_N7            &kp KP_N8            &kp KP_N9            &kp KP_N0  &none
 &none  &sk LEFT_PINKY_MOD  &sk LEFT_RINGY_MOD  &sk LEFT_MIDDY_MOD  &sk LEFT_INDEX_MOD  &kp KP_MINUS   &trans  &none                  &none                            &kp RALT             &none              &trans              &kp KP_SLASH         &sk RIGHT_INDEX_MOD  &sk RIGHT_MIDDY_MOD  &sk RIGHT_RINGY_MOD  &sk RIGHT_PINKY_MOD  &none
 &none  &kp KP_LPAR         &kp KP_COMMA        &kp KP_DOT          &kp KP_RPAR         &kp KP_PLUS            &tog LAYER_Function    &kp RALT                                                                                    &kp KP_MULTIPLY      &kp KP_NUM           &kp KP_CLEAR         &kp KP_EQUAL         &kp KP_ENTER  &none
 &none  &tog LAYER_Gaming   &none               &none               &tog LAYER_Typing                   &tog LAYER_Cursor  &tog LAYER_Number  &none                    &none                &none              &tog LAYER_Symbol                         &tog LAYER_Typing    &none                &none                &tog LAYER_Gaming     &none
+            >;
+        };
+
+        // =====================================================================
+        // Dvorak alpha layout — remaps alpha keys, keeps HRMs on mod row
+        // Home row: A O E U I / D H T N S
+        // =====================================================================
+
+        layer_Dvorak {
+            bindings = <
+&trans       &trans   &trans      &trans      &trans   &trans  &trans                                                                                                                       &trans  &trans   &trans   &trans   &trans   &trans       &trans
+&trans       &kp SQT  &kp COMMA   &kp DOT     &kp P    &kp Y   &trans                                                                                                                       &trans  &kp F    &kp G    &kp C    &kp R    &kp L        &kp FSLH
+&kp EQUAL    &kp A    &kp O       &kp E       &kp U    &kp I   &trans  &trans  &trans                                              &trans  &trans  &trans  &kp D    &kp H    &kp T    &kp N    &kp S        &kp MINUS
+&trans       &HRM_LEFT_PINKY(SEMI)  &HRM_LEFT_RINGY(Q)  &HRM_LEFT_MIDDY(J)  &HRM_LEFT_INDEX(K)  &kp X           &trans  &trans                                              &kp B    &HRM_RIGHT_INDEX(M)  &HRM_RIGHT_MIDDY(W)  &HRM_RIGHT_RINGY(V)  &HRM_RIGHT_PINKY(Z)  &trans
+&trans       &kp BSLH &trans      &trans      &trans                   &trans  &trans  &trans                                              &trans  &trans  &trans           &kp LBKT &kp RBKT &kp GRAVE &trans       &trans
+            >;
+        };
+
+        // =====================================================================
+        // Colemak alpha layout — remaps alpha keys, keeps HRMs on mod row
+        // Home row: A R S T D / H N E I O
+        // =====================================================================
+
+        layer_Colemak {
+            bindings = <
+&trans       &trans   &trans   &trans   &trans   &trans  &trans                                                                                                                       &trans  &trans   &trans   &trans   &trans       &trans       &trans
+&trans       &kp Q    &kp W    &kp F    &kp P    &kp G   &trans                                                                                                                       &trans  &kp J    &kp L    &kp U    &kp Y        &kp SEMI     &kp MINUS
+&trans       &kp A    &kp R    &kp S    &kp T    &kp D   &trans  &trans  &trans                                              &trans  &trans  &trans  &kp H    &kp N    &kp E    &kp I        &kp O        &kp SQT
+&trans       &HRM_LEFT_PINKY(Z)  &HRM_LEFT_RINGY(X)  &HRM_LEFT_MIDDY(C)  &HRM_LEFT_INDEX(V)  &kp B           &trans  &trans                                              &kp K    &HRM_RIGHT_INDEX(M)  &HRM_RIGHT_MIDDY(COMMA)  &HRM_RIGHT_RINGY(DOT)  &HRM_RIGHT_PINKY(FSLH)  &trans
+&trans       &kp BSLH &trans   &trans   &trans                   &trans  &trans  &trans                                              &trans  &trans  &trans           &kp LBKT &kp RBKT     &kp GRAVE    &trans       &trans
+            >;
+        };
+
+        // =====================================================================
+        // Factory layer — fallback QWERTY with no hold-taps or layers
+        // For recovery if configuration gets stuck
+        // =====================================================================
+
+        layer_Factory {
+            bindings = <
+&kp EQUAL   &kp N1    &kp N2    &kp N3    &kp N4    &kp N5    &kp N6                                                                                                        &kp N6    &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &kp MINUS
+&kp TAB     &kp Q     &kp W     &kp E     &kp R     &kp T     &none                                                                                                         &none     &kp Y     &kp U     &kp I     &kp O     &kp P     &kp BSLH
+&kp ESC     &kp A     &kp S     &kp D     &kp F     &kp G     &none   &none     &none                                             &none     &none     &none     &kp H     &kp J     &kp K     &kp L     &kp SEMI  &kp SQT
+&kp LSHFT   &kp Z     &kp X     &kp C     &kp V     &kp B             &none     &none                                                       &kp N     &kp M     &kp COMMA &kp DOT   &kp FSLH  &kp RSHFT
+&kp LCTRL   &kp LGUI  &kp LALT  &kp LEFT  &kp RIGHT                   &kp SPACE &kp RET   &kp BSPC                                &kp RET   &kp BSPC  &kp SPACE             &kp DOWN  &kp UP    &kp RALT  &kp RGUI  &mo LAYER_Mod
             >;
         };
 

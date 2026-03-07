@@ -54,11 +54,12 @@
 #define LAYER_Typing     16
 #define LAYER_Gaming     17
 //
+#define LAYER_Dvorak     18
+#define LAYER_Colemak    19
+#define LAYER_Factory    20
+//
 // Future phases (uncomment and renumber as implemented):
-// #define LAYER_Dvorak     18
-// #define LAYER_Colemak    19
-// #define LAYER_macOS      20  (skip if always macOS-native)
-// #define LAYER_Factory    21
+// #define LAYER_macOS      21  (skip if always macOS-native)
 // #define LAYER_macOS_left / LAYER_macOS_right / LAYER_macOS_lower
 
 // Finger mod assignments (macOS: CAGS — Ctrl, Alt, Gui, Shift)
