@@ -123,6 +123,18 @@
      52 53                                             \
      65 66 67 68 69 70
 
+// Thumb key positions (for combos)
+// Mapped from sunaku's T1-T6 naming to our physical positions
+#define POS_LH_T1 52   // ESC / Function layer
+#define POS_LH_T2 53   // DEL / Lower layer
+#define POS_LH_T4 65   // RET / Cursor layer
+#define POS_LH_T5 66   // TAB / Number layer
+#define POS_LH_T6 67   // Backspace
+#define POS_RH_T1 68   // RET / System layer
+#define POS_RH_T4 70   // SPC / Symbol layer
+#define POS_RH_T5 69   // Backspace
+// Note: no equivalents for LH_T3, RH_T2, RH_T3, RH_T6
+
 // Per-finger timing (sunaku DIFFICULTY_LEVEL 0, TAPPING_RESOLUTION=150)
 #define PINKY_HOLDING_TIME 270
 #define RINGY_HOLDING_TIME 240
