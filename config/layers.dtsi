@@ -1,0 +1,138 @@
+// Layer defines for sunaku-style Miryoku layout
+// Translated from sunaku/glove80-keymaps v52 "Glorious Engrammer"
+
+// Operating system
+#define OPERATING_SYSTEM 'M' // macOS
+
+// macOS key abstractions
+#define _A_TAB  LGUI
+#define _G_TAB  LALT
+#define _WORD   LA
+#define _HOME   LG(LEFT)
+#define _END    LG(RIGHT)
+
+// Base layers
+#define LAYER_QWERTY      0
+#define LAYER_Dvorak      1
+#define LAYER_Colemak     2
+
+// OS-specific overlay
+#define LAYER_macOS       3
+
+// Typing mode (no home row mods)
+#define LAYER_Typing      4
+
+// Bilateral enforcement layers
+#define LAYER_LeftPinky   5
+#define LAYER_LeftRingy   6
+#define LAYER_LeftMiddy   7
+#define LAYER_LeftIndex   8
+#define LAYER_RightIndex  9
+#define LAYER_RightMiddy  10
+#define LAYER_RightRingy  11
+#define LAYER_RightPinky  12
+
+// Gaming
+#define LAYER_Gaming      13
+
+// Functional layers (left thumb access)
+#define LAYER_Cursor      14
+#define LAYER_Number      15
+#define LAYER_Function    16
+
+// macOS cursor/number/function variant
+#define LAYER_macOS_left  17
+
+// Functional layers (right thumb access)
+#define LAYER_Symbol      18
+#define LAYER_System      19
+
+// macOS symbol/system variant
+#define LAYER_macOS_right 20
+
+// Factory
+#define LAYER_Factory     21
+
+// Lower + macOS lower
+#define LAYER_Lower       22
+#define LAYER_macOS_lower 23
+
+// Mod (BT, bootloader, RGB)
+#define LAYER_Mod         24
+
+// Finger mod assignments (macOS: CAGS — Ctrl, Alt, Gui, Shift)
+#define LEFT_PINKY_MOD  LCTL
+#define LEFT_RINGY_MOD  LALT
+#define LEFT_MIDDY_MOD  LGUI
+#define LEFT_INDEX_MOD  LSFT
+#define RIGHT_INDEX_MOD LSFT
+#define RIGHT_MIDDY_MOD LGUI
+#define RIGHT_RINGY_MOD LALT
+#define RIGHT_PINKY_MOD LCTL
+
+// Home row key codes (QWERTY)
+#define LEFT_PINKY_KEY  A
+#define LEFT_RINGY_KEY  S
+#define LEFT_MIDDY_KEY  D
+#define LEFT_INDEX_KEY  F
+#define RIGHT_INDEX_KEY J
+#define RIGHT_MIDDY_KEY K
+#define RIGHT_RINGY_KEY L
+#define RIGHT_PINKY_KEY SEMI
+
+//
+// Kinesis Adv360 key positions (76 keys)
+//
+// |------------------------------------------------------|------------------------------------------------------|
+// | LEFT_HAND_KEYS                                       |                                    RIGHT_HAND_KEYS   |
+// |                                                      |                                                      |
+// |  0  1  2  3  4  5   6                                |                7   8  9 10 11 12 13                   |
+// | 14 15 16 17 18 19  20                                |               21  22 23 24 25 26 27                   |
+// | 28 29 30 31 32 33  34      35 36     37 38       39  |  40 41 42 43 44 45                                    |
+// | 46 47 48 49 50 51          52        53              |  54 55 56 57 58 59                                    |
+// | 60 61 62 63 64        65 66 67     68 69 70          |     71 72 73 74 75                                    |
+// |------------------------------------------------------|------------------------------------------------------|
+//
+#define                                                \
+     LEFT_HAND_KEYS                                    \
+      0  1  2  3  4  5  6                              \
+     14 15 16 17 18 19 20                              \
+     28 29 30 31 32 33 34                              \
+     46 47 48 49 50 51                                 \
+     60 61 62 63 64
+#define                                                \
+                                     RIGHT_HAND_KEYS   \
+                                       7  8  9 10 11 12 13 \
+                                      21 22 23 24 25 26 27 \
+                                  39  40 41 42 43 44 45 \
+                                      54 55 56 57 58 59 \
+                                         71 72 73 74 75
+#define                                                \
+     THUMB_KEYS                                        \
+     35 36 37 38                                       \
+     52 53                                             \
+     65 66 67 68 69 70
+
+// Per-finger timing (sunaku DIFFICULTY_LEVEL 0, TAPPING_RESOLUTION=150)
+#define PINKY_HOLDING_TIME 270
+#define RINGY_HOLDING_TIME 240
+#define MIDDY_HOLDING_TIME 210
+#define INDEX_HOLDING_TIME 180
+#define HOMEY_STREAK_DECAY 150
+#define HOMEY_REPEAT_DECAY 300
+#define HOMEY_HOLDING_TYPE "tap-preferred"
+
+// Thumb cluster timing
+#define THUMB_HOLDING_TIME 200
+#define THUMB_REPEAT_DECAY 300
+#define THUMB_HOLDING_TYPE "balanced"
+
+// Combo timing
+#define COMBO_FIRING_DECAY 50
+
+// Sticky key timing
+#define STICKY_HOLDING_TIME 200
+#define STICKY_1SHOT_DECAY  500
+
+// Bilateral enforcement (uncomment to enable)
+//#define ENFORCE_BILATERAL
