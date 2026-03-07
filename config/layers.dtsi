@@ -5,11 +5,24 @@
 #define OPERATING_SYSTEM 'M' // macOS
 
 // macOS key abstractions
+#define _C      LG
 #define _A_TAB  LGUI
 #define _G_TAB  LALT
+#define _REDO   LG(LS(Z))
+#define _POWER  K_POWER
 #define _WORD   LA
 #define _HOME   LG(LEFT)
 #define _END    LG(RIGHT)
+#define _EMOJI  LG(LC(SPACE))
+#define _LOCK   _C(LC(Q))
+#define _UNDO   _C(Z)
+#define _CUT    _C(X)
+#define _COPY   _C(C)
+#define _PASTE  _C(V)
+#define _FIND   _C(F)
+
+// Select word/line delay
+#define SELECT_WORD_DELAY 1
 
 // Base layers
 #define LAYER_QWERTY      0

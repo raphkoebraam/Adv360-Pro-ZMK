@@ -213,6 +213,33 @@
             quick-tap-ms = <THUMB_REPEAT_DECAY>;
         };
 
+        // Sticky key one-shot (used in combos for sticky shift)
+        sticky_key_modtap: sticky_key_modtap {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&sticky_key_oneshot>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <STICKY_HOLDING_TIME>;
+        };
+        sticky_key_oneshot: sticky_key_oneshot_macro {
+            compatible = "zmk,behavior-macro-one-param";
+            wait-ms = <0>;
+            tap-ms = <0>;
+            #binding-cells = <1>;
+            bindings
+              = <&macro_param_1to1>
+              , <&macro_tap &sticky_key_quickrel MACRO_PLACEHOLDER>
+              ;
+        };
+        sticky_key_quickrel: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <STICKY_1SHOT_DECAY>;
+            quick-release;
+            ignore-modifiers;
+        };
+
         key_lh_t2: key_lh_t2 {
             compatible = "zmk,behavior-mod-morph";
             label = "KEY_LH_T2";
