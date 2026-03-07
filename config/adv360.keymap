@@ -368,103 +368,103 @@
         combo_caps_word {
             bindings = <&caps_word>;
             key-positions = <32 41>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         combo_caps_lock {
             bindings = <&kp CAPSLOCK>;
             key-positions = <50 55>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         // Row above home combos — left hand (Q=15, W=16, E=17, R=18)
 
         lh_combo_cut {
-            bindings = <&kp LG(X)>;
+            bindings = <&kp _CUT>;
             key-positions = <15 16>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         lh_combo_copy {
-            bindings = <&kp LG(C)>;
+            bindings = <&kp _COPY>;
             key-positions = <16 17>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         lh_combo_paste {
-            bindings = <&kp LG(V)>;
+            bindings = <&kp _PASTE>;
             key-positions = <17 18>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         lh_combo_undo {
-            bindings = <&kp LG(Z)>;
+            bindings = <&kp _UNDO>;
             key-positions = <16 18>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         lh_combo_redo {
-            bindings = <&kp LS(LG(Z))>;
+            bindings = <&kp _REDO>;
             key-positions = <15 17>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         lh_combo_select_all {
-            bindings = <&kp LG(A)>;
+            bindings = <&kp _C(A)>;
             key-positions = <15 18>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         // Row above home combos — right hand mirrored (U=23, I=24, O=25, P=26)
 
         rh_combo_cut {
-            bindings = <&kp LG(X)>;
+            bindings = <&kp _CUT>;
             key-positions = <25 26>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         rh_combo_copy {
-            bindings = <&kp LG(C)>;
+            bindings = <&kp _COPY>;
             key-positions = <24 25>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         rh_combo_paste {
-            bindings = <&kp LG(V)>;
+            bindings = <&kp _PASTE>;
             key-positions = <23 24>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         rh_combo_undo {
-            bindings = <&kp LG(Z)>;
+            bindings = <&kp _UNDO>;
             key-positions = <23 25>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         rh_combo_redo {
-            bindings = <&kp LS(LG(Z))>;
+            bindings = <&kp _REDO>;
             key-positions = <24 26>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         rh_combo_select_all {
-            bindings = <&kp LG(A)>;
+            bindings = <&kp _C(A)>;
             key-positions = <23 26>;
-            timeout-ms = <40>;
-            require-prior-idle-ms = <150>;
+            timeout-ms = <COMBO_FIRING_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
         };
 
         // =====================================================================
