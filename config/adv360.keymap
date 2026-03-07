@@ -303,6 +303,113 @@
             hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
         };
 
+        // Cross-finger bilateral behaviors
+        // Used on bilateral layers at other home-row-mod positions.
+        // Hold: activates the cross finger's modifier (e.g., Alt)
+        // Tap: parent's _tap macro cancels all mods and types plainly
+        // This allows combining two same-hand mods (e.g., Ctrl+Alt)
+        // while still cancelling accidental single-key taps.
+        //
+        // Usage: &left_pinky_cross LEFT_RINGY_MOD LEFT_RINGY_TAP_KEY
+        //   Hold → &kp LALT (ringy mod activates alongside pinky mod)
+        //   Tap  → &left_pinky_tap X (releases all mods, types "zx")
+
+        left_pinky_cross: cross_left_pinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&left_pinky_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <PINKY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        left_ringy_cross: cross_left_ringy {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&left_ringy_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <RINGY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        left_middy_cross: cross_left_middy {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&left_middy_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <MIDDY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        left_index_cross: cross_left_index {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&left_index_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <INDEX_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <RIGHT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_index_cross: cross_right_index {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&right_index_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <INDEX_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_middy_cross: cross_right_middy {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&right_middy_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <MIDDY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_ringy_cross: cross_right_ringy {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&right_ringy_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <RINGY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
+        right_pinky_cross: cross_right_pinky {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            bindings = <&kp>, <&right_pinky_tap>;
+            flavor = HOMEY_HOLDING_TYPE;
+            tapping-term-ms = <PINKY_HOLDING_TIME>;
+            quick-tap-ms = <HOMEY_REPEAT_DECAY>;
+            require-prior-idle-ms = <HOMEY_STREAK_DECAY>;
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <LEFT_HAND_KEYS THUMB_KEYS>;
+        };
+
         // Thumb cluster layer-tap
         thumb: thumb_layer_access {
             compatible = "zmk,behavior-hold-tap";
@@ -827,7 +934,7 @@
 &left_pinky_tap EQUAL   &left_pinky_tap N1      &left_pinky_tap N2      &left_pinky_tap N3      &left_pinky_tap N4      &left_pinky_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_pinky_tap LS(N2)  &left_pinky_tap Q       &left_pinky_tap W       &left_pinky_tap E       &left_pinky_tap R       &left_pinky_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_pinky_tap ESC     &left_pinky_tap A       &left_pinky_tap S       &left_pinky_tap D       &left_pinky_tap F       &left_pinky_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                  &none                   &left_pinky_tap X       &left_pinky_tap C       &left_pinky_tap V       &left_pinky_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &none                                           &left_pinky_cross LEFT_RINGY_MOD LEFT_RINGY_TAP_KEY  &left_pinky_cross LEFT_MIDDY_MOD LEFT_MIDDY_TAP_KEY  &left_pinky_cross LEFT_INDEX_MOD LEFT_INDEX_TAP_KEY  &left_pinky_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
 &trans                  &left_pinky_tap END     &left_pinky_tap PG_UP   &left_pinky_tap PG_DN   &left_pinky_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -837,7 +944,7 @@
 &left_ringy_tap EQUAL   &left_ringy_tap N1      &left_ringy_tap N2      &left_ringy_tap N3      &left_ringy_tap N4      &left_ringy_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_ringy_tap LS(N2)  &left_ringy_tap Q       &left_ringy_tap W       &left_ringy_tap E       &left_ringy_tap R       &left_ringy_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_ringy_tap ESC     &left_ringy_tap A       &left_ringy_tap S       &left_ringy_tap D       &left_ringy_tap F       &left_ringy_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                  &left_ringy_tap Z       &none                   &left_ringy_tap C       &left_ringy_tap V       &left_ringy_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_ringy_cross LEFT_PINKY_MOD LEFT_PINKY_TAP_KEY  &none  &left_ringy_cross LEFT_MIDDY_MOD LEFT_MIDDY_TAP_KEY  &left_ringy_cross LEFT_INDEX_MOD LEFT_INDEX_TAP_KEY  &left_ringy_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
 &trans                  &left_ringy_tap END     &left_ringy_tap PG_UP   &left_ringy_tap PG_DN   &left_ringy_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -847,7 +954,7 @@
 &left_middy_tap EQUAL   &left_middy_tap N1      &left_middy_tap N2      &left_middy_tap N3      &left_middy_tap N4      &left_middy_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_middy_tap LS(N2)  &left_middy_tap Q       &left_middy_tap W       &left_middy_tap E       &left_middy_tap R       &left_middy_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_middy_tap ESC     &left_middy_tap A       &left_middy_tap S       &left_middy_tap D       &left_middy_tap F       &left_middy_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                  &left_middy_tap Z       &left_middy_tap X       &none                   &left_middy_tap V       &left_middy_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_middy_cross LEFT_PINKY_MOD LEFT_PINKY_TAP_KEY  &left_middy_cross LEFT_RINGY_MOD LEFT_RINGY_TAP_KEY  &none  &left_middy_cross LEFT_INDEX_MOD LEFT_INDEX_TAP_KEY  &left_middy_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
 &trans                  &left_middy_tap END     &left_middy_tap PG_UP   &left_middy_tap PG_DN   &left_middy_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -857,7 +964,7 @@
 &left_index_tap EQUAL   &left_index_tap N1      &left_index_tap N2      &left_index_tap N3      &left_index_tap N4      &left_index_tap N5  &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_index_tap LS(N2)  &left_index_tap Q       &left_index_tap W       &left_index_tap E       &left_index_tap R       &left_index_tap T   &trans                                                                                                                          &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &left_index_tap ESC     &left_index_tap A       &left_index_tap S       &left_index_tap D       &left_index_tap F       &left_index_tap G   &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans                  &left_index_tap Z       &left_index_tap X       &left_index_tap C       &none                   &left_index_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
+&trans                  &left_index_cross LEFT_PINKY_MOD LEFT_PINKY_TAP_KEY  &left_index_cross LEFT_RINGY_MOD LEFT_RINGY_TAP_KEY  &left_index_cross LEFT_MIDDY_MOD LEFT_MIDDY_TAP_KEY  &none  &left_index_tap B           &trans  &trans                                                      &trans  &trans  &trans  &trans  &trans  &trans
 &trans                  &left_index_tap END     &left_index_tap PG_UP   &left_index_tap PG_DN   &left_index_tap HOME                        &trans  &trans  &trans                                              &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
@@ -867,7 +974,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_index_tap N6      &right_index_tap N7      &right_index_tap N8      &right_index_tap N9      &right_index_tap N0      &right_index_tap MINUS
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_index_tap Y       &right_index_tap U       &right_index_tap I       &right_index_tap O       &right_index_tap P       &right_index_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_index_tap H       &right_index_tap J       &right_index_tap K       &right_index_tap L       &right_index_tap SEMI    &right_index_tap SQT
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_index_tap N       &none                    &right_index_tap COMMA   &right_index_tap DOT     &right_index_tap FSLH    &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_index_tap N       &none                    &right_index_cross RIGHT_MIDDY_MOD RIGHT_MIDDY_TAP_KEY  &right_index_cross RIGHT_RINGY_MOD RIGHT_RINGY_TAP_KEY  &right_index_cross RIGHT_PINKY_MOD RIGHT_PINKY_TAP_KEY  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_index_tap LEFT    &right_index_tap DOWN    &right_index_tap UP      &right_index_tap RIGHT   &trans
             >;
         };
@@ -877,7 +984,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_middy_tap N6      &right_middy_tap N7      &right_middy_tap N8      &right_middy_tap N9      &right_middy_tap N0      &right_middy_tap MINUS
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_middy_tap Y       &right_middy_tap U       &right_middy_tap I       &right_middy_tap O       &right_middy_tap P       &right_middy_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_middy_tap H       &right_middy_tap J       &right_middy_tap K       &right_middy_tap L       &right_middy_tap SEMI    &right_middy_tap SQT
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_middy_tap N       &right_middy_tap M       &none                    &right_middy_tap DOT     &right_middy_tap FSLH    &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_middy_tap N       &right_middy_cross RIGHT_INDEX_MOD RIGHT_INDEX_TAP_KEY  &none  &right_middy_cross RIGHT_RINGY_MOD RIGHT_RINGY_TAP_KEY  &right_middy_cross RIGHT_PINKY_MOD RIGHT_PINKY_TAP_KEY  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_middy_tap LEFT    &right_middy_tap DOWN    &right_middy_tap UP      &right_middy_tap RIGHT   &trans
             >;
         };
@@ -887,7 +994,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_ringy_tap N6      &right_ringy_tap N7      &right_ringy_tap N8      &right_ringy_tap N9      &right_ringy_tap N0      &right_ringy_tap MINUS
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_ringy_tap Y       &right_ringy_tap U       &right_ringy_tap I       &right_ringy_tap O       &right_ringy_tap P       &right_ringy_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_ringy_tap H       &right_ringy_tap J       &right_ringy_tap K       &right_ringy_tap L       &right_ringy_tap SEMI    &right_ringy_tap SQT
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_ringy_tap N       &right_ringy_tap M       &right_ringy_tap COMMA   &none                    &right_ringy_tap FSLH    &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_ringy_tap N       &right_ringy_cross RIGHT_INDEX_MOD RIGHT_INDEX_TAP_KEY  &right_ringy_cross RIGHT_MIDDY_MOD RIGHT_MIDDY_TAP_KEY  &none                    &right_ringy_cross RIGHT_PINKY_MOD RIGHT_PINKY_TAP_KEY  &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_ringy_tap LEFT    &right_ringy_tap DOWN    &right_ringy_tap UP      &right_ringy_tap RIGHT   &trans
             >;
         };
@@ -897,7 +1004,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_pinky_tap N6      &right_pinky_tap N7      &right_pinky_tap N8      &right_pinky_tap N9      &right_pinky_tap N0      &right_pinky_tap MINUS
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_pinky_tap Y       &right_pinky_tap U       &right_pinky_tap I       &right_pinky_tap O       &right_pinky_tap P       &right_pinky_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_pinky_tap H       &right_pinky_tap J       &right_pinky_tap K       &right_pinky_tap L       &right_pinky_tap SEMI    &right_pinky_tap SQT
-&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_pinky_tap N       &right_pinky_tap M       &right_pinky_tap COMMA   &right_pinky_tap DOT     &none                    &trans
+&trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_pinky_tap N       &right_pinky_cross RIGHT_INDEX_MOD RIGHT_INDEX_TAP_KEY  &right_pinky_cross RIGHT_MIDDY_MOD RIGHT_MIDDY_TAP_KEY  &right_pinky_cross RIGHT_RINGY_MOD RIGHT_RINGY_TAP_KEY  &none                    &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_pinky_tap LEFT    &right_pinky_tap DOWN    &right_pinky_tap UP      &right_pinky_tap RIGHT   &trans
             >;
         };
