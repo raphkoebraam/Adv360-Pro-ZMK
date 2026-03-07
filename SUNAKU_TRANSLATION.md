@@ -322,12 +322,12 @@ These 6 keys exist on Kinesis but not on Glove80's equivalent rows.
 ### Phase 4: Extra layers
 | # | Task | Status |
 |---|------|--------|
-| 4.1 | Implement Dvorak base layer | Pending |
-| 4.2 | Implement Colemak base layer | Pending |
-| 4.3 | Implement macOS overlay layers | Pending |
-| 4.4 | Implement Typing layer (no HRMs) | Pending |
-| 4.5 | Implement Gaming layer | Pending |
-| 4.6 | Implement Factory layer | Pending |
+| 4.1 | Implement Dvorak base layer | Done |
+| 4.2 | Implement Colemak base layer | Done |
+| 4.3 | Implement macOS overlay layers | Skipped (already macOS-native) |
+| 4.4 | Implement Typing layer (no HRMs) | Done |
+| 4.5 | Implement Gaming layer | Done |
+| 4.6 | Implement Factory layer | Done |
 
 ### Phase 5: Sync & tooling
 | # | Task | Status |
