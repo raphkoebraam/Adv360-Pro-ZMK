@@ -625,7 +625,37 @@
 &none  &kp KP_N1           &kp KP_N2           &kp KP_N3           &kp KP_N4           &kp KP_N5      &trans                                                                                                                      &trans              &kp KP_N6            &kp KP_N7            &kp KP_N8            &kp KP_N9            &kp KP_N0  &none
 &none  &sk LEFT_PINKY_MOD  &sk LEFT_RINGY_MOD  &sk LEFT_MIDDY_MOD  &sk LEFT_INDEX_MOD  &kp KP_MINUS   &trans  &none                  &none                            &kp RALT             &none              &trans              &kp KP_SLASH         &sk RIGHT_INDEX_MOD  &sk RIGHT_MIDDY_MOD  &sk RIGHT_RINGY_MOD  &sk RIGHT_PINKY_MOD  &none
 &none  &kp KP_LPAR         &kp KP_COMMA        &kp KP_DOT          &kp KP_RPAR         &kp KP_PLUS            &tog LAYER_Function    &kp RALT                                                                                    &kp KP_MULTIPLY      &kp KP_NUM           &kp KP_CLEAR         &kp KP_EQUAL         &kp KP_ENTER  &none
-&none  &none               &none               &none               &none                               &tog LAYER_Cursor  &tog LAYER_Number  &none                    &none                &none              &tog LAYER_Symbol                         &none                &none                &none                &none         &none
+&none  &tog LAYER_Gaming   &none               &none               &tog LAYER_Typing                   &tog LAYER_Cursor  &tog LAYER_Number  &none                    &none                &none              &tog LAYER_Symbol                         &tog LAYER_Typing    &none                &none                &tog LAYER_Gaming     &none
+            >;
+        };
+
+        // =====================================================================
+        // Typing layer — disables all home row mods and layer-taps
+        // Activated via combo or Lower layer toggle
+        // =====================================================================
+
+        layer_Typing {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &kp F   &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &trans  &kp J   &trans  &trans  &trans  &trans
+&trans  &kp Z   &kp X   &kp C   &kp V   &trans          &kp ESC &kp DELETE                                                 &trans  &kp M   &kp COMMA &kp DOT &kp FSLH &trans
+&trans  &trans  &trans  &trans  &trans                   &kp RET &kp TAB &trans                                     &kp RET &trans  &kp SPACE       &trans  &trans  &trans  &trans  &trans
+            >;
+        };
+
+        // =====================================================================
+        // Gaming layer — standalone QWERTY, no hold-taps, WASD-optimized
+        // Toggle via combo on Lower layer
+        // =====================================================================
+
+        layer_Gaming {
+            bindings = <
+&kp ESC     &kp N1      &kp N2  &kp N3  &kp N4  &kp N5  &kp N6                                                                                                &trans  &kp N7  &kp N8      &kp N9      &kp N0      &kp MINUS   &kp EQUAL
+&kp TAB     &kp Q       &kp W   &kp E   &kp R   &kp T   &kp Y                                                                                                 &trans  &kp Y   &kp U       &kp I       &kp O       &kp P       &kp BSLH
+&kp LCTRL   &kp A       &kp S   &kp D   &kp F   &kp G   &kp H   &kp GRAVE   &kp M                               &trans  &trans  &trans  &kp H   &kp J       &kp K       &kp L       &kp SEMI    &kp SQT
+&kp LSHFT   &kp Z       &kp X   &kp C   &kp V   &kp B           &kp F1      &kp F2                                               &kp N   &kp M       &kp COMMA   &kp DOT     &kp FSLH    &kp RSHFT
+&kp LALT    &kp F3      &kp F4  &kp F5  &kp F6                  &kp SPACE   &kp LCTRL &kp LALT                    &kp RET &kp BSPC &kp SPACE       &kp LEFT    &kp DOWN    &kp UP      &kp RIGHT   &mo LAYER_Mod
             >;
         };
 
