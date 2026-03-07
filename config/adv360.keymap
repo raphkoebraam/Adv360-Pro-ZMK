@@ -864,8 +864,8 @@
 
         layer_RightIndex {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_index_tap N6      &right_index_tap N7      &right_index_tap N8      &right_index_tap N9      &right_index_tap N0      &right_index_tap MINUS
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_index_tap Y       &right_index_tap U       &right_index_tap I       &right_index_tap O       &right_index_tap P       &right_index_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_index_tap N6      &right_index_tap N7      &right_index_tap N8      &right_index_tap N9      &right_index_tap N0      &right_index_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_index_tap Y       &right_index_tap U       &right_index_tap I       &right_index_tap O       &right_index_tap P       &right_index_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_index_tap H       &right_index_tap J       &right_index_tap K       &right_index_tap L       &right_index_tap SEMI    &right_index_tap SQT
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_index_tap N       &none                    &right_index_tap COMMA   &right_index_tap DOT     &right_index_tap FSLH    &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_index_tap LEFT    &right_index_tap DOWN    &right_index_tap UP      &right_index_tap RIGHT   &trans
@@ -874,8 +874,8 @@
 
         layer_RightMiddy {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_middy_tap N6      &right_middy_tap N7      &right_middy_tap N8      &right_middy_tap N9      &right_middy_tap N0      &right_middy_tap MINUS
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_middy_tap Y       &right_middy_tap U       &right_middy_tap I       &right_middy_tap O       &right_middy_tap P       &right_middy_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_middy_tap N6      &right_middy_tap N7      &right_middy_tap N8      &right_middy_tap N9      &right_middy_tap N0      &right_middy_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_middy_tap Y       &right_middy_tap U       &right_middy_tap I       &right_middy_tap O       &right_middy_tap P       &right_middy_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_middy_tap H       &right_middy_tap J       &right_middy_tap K       &right_middy_tap L       &right_middy_tap SEMI    &right_middy_tap SQT
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_middy_tap N       &right_middy_tap M       &none                    &right_middy_tap DOT     &right_middy_tap FSLH    &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_middy_tap LEFT    &right_middy_tap DOWN    &right_middy_tap UP      &right_middy_tap RIGHT   &trans
@@ -884,8 +884,8 @@
 
         layer_RightRingy {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_ringy_tap N6      &right_ringy_tap N7      &right_ringy_tap N8      &right_ringy_tap N9      &right_ringy_tap N0      &right_ringy_tap MINUS
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_ringy_tap Y       &right_ringy_tap U       &right_ringy_tap I       &right_ringy_tap O       &right_ringy_tap P       &right_ringy_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_ringy_tap N6      &right_ringy_tap N7      &right_ringy_tap N8      &right_ringy_tap N9      &right_ringy_tap N0      &right_ringy_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_ringy_tap Y       &right_ringy_tap U       &right_ringy_tap I       &right_ringy_tap O       &right_ringy_tap P       &right_ringy_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_ringy_tap H       &right_ringy_tap J       &right_ringy_tap K       &right_ringy_tap L       &right_ringy_tap SEMI    &right_ringy_tap SQT
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_ringy_tap N       &right_ringy_tap M       &right_ringy_tap COMMA   &none                    &right_ringy_tap FSLH    &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_ringy_tap LEFT    &right_ringy_tap DOWN    &right_ringy_tap UP      &right_ringy_tap RIGHT   &trans
@@ -894,8 +894,8 @@
 
         layer_RightPinky {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_pinky_tap N6      &right_pinky_tap N7      &right_pinky_tap N8      &right_pinky_tap N9      &right_pinky_tap N0      &right_pinky_tap MINUS
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                          &right_pinky_tap Y       &right_pinky_tap U       &right_pinky_tap I       &right_pinky_tap O       &right_pinky_tap P       &right_pinky_tap BSLH
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_pinky_tap N6      &right_pinky_tap N7      &right_pinky_tap N8      &right_pinky_tap N9      &right_pinky_tap N0      &right_pinky_tap MINUS
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                                                                                  &trans  &right_pinky_tap Y       &right_pinky_tap U       &right_pinky_tap I       &right_pinky_tap O       &right_pinky_tap P       &right_pinky_tap BSLH
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans                                              &trans  &trans  &trans  &right_pinky_tap H       &right_pinky_tap J       &right_pinky_tap K       &right_pinky_tap L       &right_pinky_tap SEMI    &right_pinky_tap SQT
 &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans                                                      &right_pinky_tap N       &right_pinky_tap M       &right_pinky_tap COMMA   &right_pinky_tap DOT     &none                    &trans
 &trans  &trans  &trans  &trans  &trans                  &trans  &trans  &trans                                              &trans  &trans  &trans          &right_pinky_tap LEFT    &right_pinky_tap DOWN    &right_pinky_tap UP      &right_pinky_tap RIGHT   &trans
