@@ -332,5 +332,5 @@ These 6 keys exist on Kinesis but not on Glove80's equivalent rows.
 ### Phase 5: Sync & tooling
 | # | Task | Status |
 |---|------|--------|
-| 5.1 | Sync all changes to Glove80 config | Pending |
-| 5.2 | Build translation script (Kinesis <-> Glove80) -- shell or Swift | Pending |
+| 5.1 | Sync all changes to Glove80 config | Pending (manual, use sync tool) |
+| 5.2 | Build translation script (Kinesis <-> Glove80) -- shell or Swift | Done (Python) |
