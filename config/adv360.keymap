@@ -58,109 +58,10 @@
             hold-trigger-key-positions = <7 8 9 10 11 12 13 21 22 23 24 25 26 27 39 40 41 42 43 44 45 54 55 56 57 58 59 71 72 73 74 75 35 36 37 38 52 53 65 66 67 68 69 70>;
         };
 
-        sr_lh_1: sr_lh_1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_LH_1";
-            bindings = <&kp LS(TILDE)>, <&kp LS(EQUAL)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_lh_2: sr_lh_2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_LH_2";
-            bindings = <&kp N1>, <&kp LS(N1)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_lh_3: sr_lh_3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_LH_3";
-            bindings = <&kp N2>, <&kp LS(LEFT_BRACKET)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_lh_4: sr_lh_4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_LH_4";
-            bindings = <&kp N3>, <&kp LEFT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_lh_5: sr_lh_5 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_LH_5";
-            bindings = <&kp N4>, <&kp LS(N9)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_lh_6: sr_lh_6 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_LH_6";
-            bindings = <&kp N5>, <&kp LS(N5)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         key_lh_t2: key_lh_t2 {
             compatible = "zmk,behavior-mod-morph";
             label = "KEY_LH_T2";
             bindings = <&kp LS(N3)>, <&kp LG(LS(N4))>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_rh_1: sr_rh_1 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_RH_1";
-            bindings = <&kp N6>, <&kp LS(N7)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_rh_2: sr_rh_2 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_RH_2";
-            bindings = <&kp N7>, <&kp LS(N0)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_rh_3: sr_rh_3 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_RH_3";
-            bindings = <&kp N8>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_rh_4: sr_rh_4 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_RH_4";
-            bindings = <&kp N9>, <&kp LS(RIGHT_BRACKET)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sr_rh_5: sr_rh_5 {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SYMBOL_ROW_RH_5";
-            bindings = <&kp N0>, <&kp LS(N8)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
