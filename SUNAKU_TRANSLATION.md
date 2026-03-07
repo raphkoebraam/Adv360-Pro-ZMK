@@ -315,9 +315,9 @@ These 6 keys exist on Kinesis but not on Glove80's equivalent rows.
 ### Phase 3: Infrastructure
 | # | Task | Status |
 |---|------|--------|
-| 3.1 | Implement 8 bilateral enforcement layers | Pending |
-| 3.2 | Implement sunaku-style thumb combos | Pending |
-| 3.3 | Update existing combos to use layer defines | Pending |
+| 3.1 | Implement 8 bilateral enforcement layers | Done |
+| 3.2 | Implement sunaku-style thumb combos | Done |
+| 3.3 | Update existing combos to use layer defines | Done |
 
 ### Phase 4: Extra layers
 | # | Task | Status |
