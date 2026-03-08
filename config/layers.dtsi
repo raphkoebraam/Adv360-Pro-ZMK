@@ -35,8 +35,8 @@
 //
 // Phase 2 core layers:
 #define LAYER_QWERTY      0   // default base layer (kept)
-#define LAYER_Cursor      1   // arrows, navigation (replaces keypad)
-#define LAYER_Number      2   // numpad, hex (replaces fn)
+#define LAYER_Cursor      1   // arrows, navigation
+#define LAYER_Keypad      2   // mirrored numpad (original layout)
 #define LAYER_Mod         3   // BT, bootloader, RGB (kept as-is)
 #define LAYER_Symbol      4   // programming symbols (replaces nav_symbol)
 #define LAYER_Function    5   // F-keys, media (new)
@@ -61,8 +61,10 @@
 #define LAYER_Colemak    19
 #define LAYER_Factory    20
 //
+#define LAYER_SunakuNumber 21  // sunaku's number layer (alternate)
+//
 // Future phases (uncomment and renumber as implemented):
-// #define LAYER_macOS      21  (skip if always macOS-native)
+// #define LAYER_macOS      22  (skip if always macOS-native)
 // #define LAYER_macOS_left / LAYER_macOS_right / LAYER_macOS_lower
 
 // Finger mod assignments (macOS: CAGS — Ctrl, Alt, Gui, Shift)
@@ -150,8 +152,8 @@
 // Mapped from sunaku's T1-T6 naming to our physical positions
 #define POS_LH_T1 52   // ESC / Function layer
 #define POS_LH_T2 53   // DEL / Lower layer
-#define POS_LH_T4 65   // RET / Cursor layer
-#define POS_LH_T5 66   // TAB / Number layer
+#define POS_LH_T4 65   // RET / Keypad layer
+#define POS_LH_T5 66   // TAB / Cursor layer
 #define POS_LH_T6 67   // Backspace
 #define POS_RH_T1 68   // RET / System layer
 #define POS_RH_T4 70   // SPC / Symbol layer
