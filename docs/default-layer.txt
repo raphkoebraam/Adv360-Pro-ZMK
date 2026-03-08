@@ -1,0 +1,120 @@
+Kinesis Advantage 360 Pro — Default Layer (QWERTY)
+===================================================
+
+TAP LAYER (what you type)
+─────────────────────────
+
+LEFT HAND                                          RIGHT HAND
+┌────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬────┐
+│  = │  1 │  2 │  3 │  4 │  5 │ Mod│              │ Mod│  6 │  7 │  8 │  9 │  0 │  - │
+├────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼────┤
+│  @ │  Q │  W │  E │  R │  T │Scr3│              │Scr5│  Y │  U │  I │  O │  P │  \ │
+├────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼────┤
+│ Esc│  A │  S │  D │  F │  G │Scr4│              │Lock│  H │  J │  K │  L │  ; │  ' │
+├────┼────┼────┼────┼────┼────┼────┘              └────┼────┼────┼────┼────┼────┼────┤
+│ LSh│  Z │  X │  C │  V │  B │                        │  N │  M │  , │  . │  / │ RSh│
+├────┼────┼────┼────┼────┼────┘                        └────┼────┼────┼────┼────┼────┤
+│ Mod│ End│PgUp│PgDn│Home│                                  │  ← │  ↓ │  ↑ │  → │ Mod│
+└────┴────┴────┴────┴────┘                                  └────┴────┴────┴────┴────┘
+                                     THUMB CLUSTERS
+
+                               ┌────┬────┐    ┌────┬────┐
+                               │  ` │  # │    │  = │  ^ │
+                          ┌────┼────┼────┤    ├────┼────┼────┐
+                          │    │    │ Esc│    │ Del│    │    │
+                          │ Ret│ Tab├────┤    ├────┤BkSp│ Spc│
+                          │    │    │BkSp│    │ Ret│    │    │
+                          └────┴────┴────┘    └────┴────┴────┘
+
+
+HOLD LAYER (what you get when holding)
+──────────────────────────────────────
+
+LEFT HAND                                          RIGHT HAND
+┌────┬────┬────┬────┬────┬────┬────┐              ┌────┬────┬────┬────┬────┬────┬────┐
+│    │    │    │    │    │    │    →│              │←   │    │    │    │    │    │    │
+├────┼────┼────┼────┼────┼────┤ Mod│              │ Mod├────┼────┼────┼────┼────┼────┤
+│    │    │    │    │    │    │    →│              │←   │    │    │    │    │    │    │
+├────┼────┼────┼────┼────┼────┼────┤              ├────┼────┼────┼────┼────┼────┼────┤
+│    │    │    │    │ HYP│    │    │              │    │    │ HYP│    │    │    │    │
+├────┼────┼────┼────┼────┼────┼────┘              └────┼────┼────┼────┼────┼────┼────┤
+│    │Ctrl│ Alt│ Cmd│Shft│    │                        │    │Shft│ Cmd│ Alt│Ctrl│    │
+├────┼────┼────┼────┼────┼────┘                        └────┼────┼────┼────┼────┼────┤
+│ Mod│    │    │    │    │                                  │    │    │    │    │ Mod│
+└────┴────┴────┴────┴────┘                                  └────┴────┴────┴────┴────┘
+                                     THUMB CLUSTERS
+
+                               ┌────┬────┐    ┌────┬────┐
+                               │    │Scr4│    │    │Scr5│
+                          ┌────┼────┼────┤    ├────┼────┼────┐
+                          │    │    │ →  │    │  ← │    │    │
+                          │ →  │ →  │ Fn ├────┤ Low│  → │  → │
+                          │Curs│ Num├────┤    ├────┤    │ Sym│
+                          │    │    │    │    │ →  │    │    │
+                          └────┴────┴────┘ Sys└────┴────┴────┘
+
+→/← arrows indicate which layer activates when held.
+Blank = no hold behavior (tap only).
+
+
+COMBINED REFERENCE (tap / hold)
+───────────────────────────────
+
+LEFT HAND                                          RIGHT HAND
+┌──────┬──────┬──────┬──────┬──────┬──────┬──────┐          ┌──────┬──────┬──────┬──────┬──────┬──────┬──────┐
+│  =   │  1   │  2   │  3   │  4   │  5   │      │          │      │  6   │  7   │  8   │  9   │  0   │  -   │
+│      │      │      │      │      │      │  Mod │          │  Mod │      │      │      │      │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┤          ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│  @   │  Q   │  W   │  E   │  R   │  T   │      │          │      │  Y   │  U   │  I   │  O   │  P   │  \   │
+│      │      │      │      │      │      │ Scr3 │          │ Scr5 │      │      │      │      │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┤          ├──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│ Esc  │  A   │  S   │  D   │  F   │  G   │      │          │      │  H   │  J   │  K   │  L   │  ;   │  '   │
+│      │      │      │      │ HYP  │      │ Scr4 │          │ Lock │      │ HYP  │      │      │      │      │
+├──────┼──────┼──────┼──────┼──────┼──────┼──────┘          └──────┼──────┼──────┼──────┼──────┼──────┼──────┤
+│      │  Z   │  X   │  C   │  V   │  B   │                        │  N   │  M   │  ,   │  .   │  /   │      │
+│ LSh  │ Ctrl │ Alt  │ Cmd  │ Shft │      │                        │      │ Shft │ Cmd  │ Alt  │ Ctrl │ RSh  │
+├──────┼──────┼──────┼──────┼──────┼──────┘                        └──────┼──────┼──────┼──────┼──────┼──────┤
+│      │ End  │ PgUp │ PgDn │ Home │                                      │  ←   │  ↓   │  ↑   │  →   │      │
+│ Mod  │      │      │      │      │                                      │      │      │      │      │ Mod  │
+└──────┴──────┴──────┴──────┴──────┘                                      └──────┴──────┴──────┴──────┴──────┘
+                                            THUMB CLUSTERS
+
+                                     ┌──────┬──────┐    ┌──────┬──────┐
+                                     │  `   │  #   │    │  =   │  ^   │
+                                     │      │ Scr4 │    │      │ Scr5 │
+                                ┌────┼──────┼──────┤    ├──────┼──────┼────┐
+                                │ Ret│ Tab  │ Esc  │    │ Del  │ BkSp │ Spc│
+                                │    │      │      │    │      │      │    │
+                                │Curs│ Num  │  Fn  │    │ Low  │      │ Sym│
+                                │    │      ├──────┤    ├──────┤      │    │
+                                │    │      │ BkSp │    │ Ret  │      │    │
+                                │    │      │      │    │ Sys  │      │    │
+                                └────┴──────┴──────┘    └──────┴──────┴────┘
+
+Top line = tap, bottom line = hold (layer or modifier).
+# has Shift mod-morph: Shift+# sends Cmd+Shift+4 (screenshot).
+^ has Shift mod-morph: Shift+^ sends Cmd+Shift+5 (recording).
+HYP = Hyper (Ctrl+Alt+Cmd+Shift).
+
+
+LEGEND
+──────
+
+Scr3  = Cmd+Shift+3  (macOS full screenshot)
+Scr4  = Cmd+Shift+4  (macOS area screenshot)
+Scr5  = Cmd+Shift+5  (macOS screen recording)
+Lock  = Ctrl+Cmd+Q   (macOS lock screen)
+Mod   = Momentary Mod/BT layer (layer 3)
+Curs  = Momentary Cursor layer (layer 1)
+Num   = Momentary Number layer (layer 2)
+Fn    = Momentary Function layer (layer 5)
+Sym   = Momentary Symbol layer (layer 4)
+Sys   = Momentary System layer (layer 6)
+Low   = Momentary Lower layer (layer 7)
+HYP   = Hyper (Ctrl+Alt+Cmd+Shift)
+LSh   = Left Shift (dedicated)
+RSh   = Right Shift (dedicated)
+Ctrl  = Hold modifier (LCTL / LCTL)
+Alt   = Hold modifier (LALT / LALT)
+Cmd   = Hold modifier (LGUI / LGUI)
+Shft  = Hold modifier (LSFT / LSFT)

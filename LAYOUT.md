@@ -46,81 +46,10 @@ Row 4: [60][61][62][63][64]      [65][66][67]  [68][69][70]      [71][72][73][74
 
 ## Layer 0 — Default (QWERTY)
 
-### What You Type (tap)
+Full visual layout: **[docs/default-layer.txt](docs/default-layer.txt)**
+(tap view, hold view, and combined reference with box-drawing diagrams)
 
-Left and right hand shown separately for readability. Center/inner keys listed below.
-
-```
-LEFT HAND                          RIGHT HAND
- =    1    2    3    4    5         6    7    8    9    0    -
- @    Q    W    E    R    T         Y    U    I    O    P    \
-ESC   A    S    D    F    G         H    J    K    L    ;    '
-LSh   Z    X    C    V    B         N    M    ,    .    /   RSh
-Mod  End  PgUp PgDn Home           Left Down  Up  Right   Mod
-```
-
-### What You Get When You Hold
-
-Only keys with hold behavior are listed. Everything else is tap-only.
-
-```
-LEFT HAND (hold)                   RIGHT HAND (hold)
- .    .    .    .    .    .         .    .    .    .    .    .
- .    .    .    .    .    .         .    .    .    .    .    .
- .    .    .    .   HYP   .         .   HYP   .    .    .    .
- .   Ctrl  Alt  Cmd  Shft .         .   Shft Cmd  Alt  Ctrl  .
- .    .    .    .    .              .    .    .    .    .
-```
-
-`.` = no hold behavior (tap only)
-
-### Inner Column + Center Keys
-
-These are the keys between the two hands (positions 6-7, 20-21, 34-39, 52-53):
-
-```
-         LEFT INNER    CENTER CLUSTER    RIGHT INNER
-Row 0:     [Mod]                           [Mod]
-Row 1:     [Scr3]                          [Scr5]
-Row 2:     [Scr4]      `  [#|Scr4]  =  [^|Scr5]  [Lock]
-Row 3:            [Esc|Fn]  [Del|Low]
-```
-
-| Pos | Tap | Hold/Shift | Notes |
-|-----|-----|------------|-------|
-| 6, 7 | — | `mo Mod` | BT/bootloader layer |
-| 20 | `Cmd+Shift+3` | — | macOS full screenshot |
-| 21 | `Cmd+Shift+5` | — | macOS screen recording |
-| 34 | `Cmd+Shift+4` | — | macOS area screenshot |
-| 35 | `` ` `` | — | Backtick |
-| 36 | `#` | Shift: `Cmd+Shift+4` | Mod-morph |
-| 37 | `=` | — | Equals |
-| 38 | `^` | Shift: `Cmd+Shift+5` | Mod-morph |
-| 39 | `Ctrl+Cmd+Q` | — | macOS lock screen |
-| 52 | **Escape** | **`mo Function`** | Center thumb left |
-| 53 | **Delete** | **`mo Lower`** | Center thumb right |
-
-### Thumb Cluster
-
-```
-LEFT THUMB                         RIGHT THUMB
-  [Ret|Cursor] [Tab|Number] [Bksp]    [Ret|System] [Bksp] [Spc|Symbol]
-       65           66        67           68         69        70
-```
-
-| Pos | Tap | Hold (layer) | Notes |
-|-----|-----|-------------|-------|
-| **65** | **Return** | **Cursor** | Primary left thumb |
-| **66** | **Tab** | **Number** | |
-| 67 | Backspace | — | |
-| **68** | **Return** | **System** | Primary right thumb |
-| 69 | Backspace | — | |
-| **70** | **Space** | **Symbol** | Primary right thumb |
-
-Thumb layer-tap: `balanced` flavor, 200ms tapping-term, 300ms quick-tap.
-
-
-### Home Row Mods Detail
+### Home Row Mods
 
 Mods live on Row 3 (below home row). Per-finger timing — faster fingers get shorter
 tapping-terms. Modifier order (pinky to index): **Ctrl, Alt, Cmd, Shift**.
@@ -136,6 +65,8 @@ RIGHT:  /=Ctrl  .=Alt  ,=Cmd  M=Shift
 | Ring | X, . | Alt | 240ms |
 | Middle | C, , | Cmd | 210ms |
 | Index | V, M | Shift | 180ms |
+
+F and J hold Hyper (`Ctrl+Alt+Cmd+Shift`) with the same index-finger timing (180ms).
 
 **Misfire prevention:**
 1. `require-prior-idle-ms = 150` — during typing flow, hold-tap always resolves as tap
