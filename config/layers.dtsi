@@ -28,6 +28,9 @@
 // Select word/line delay
 #define SELECT_WORD_DELAY 1
 
+// Select all is just Ctrl+A (not a macro)
+#define select_all kp _C(A)
+
 // Layer ordering — compact for now, expand as phases are implemented
 //
 // Phase 2 core layers:
