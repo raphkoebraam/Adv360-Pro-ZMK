@@ -53,15 +53,7 @@
 #define LAYER_RightRingy  14
 #define LAYER_RightPinky  15
 //
-// Extra layers:
-#define LAYER_Typing     16
-#define LAYER_Gaming     17
-//
-#define LAYER_Dvorak     18
-#define LAYER_Colemak    19
-#define LAYER_Factory    20
-//
-#define LAYER_SunakuNumber 21  // sunaku's number layer (alternate)
+#define LAYER_SunakuNumber 16  // sunaku's number layer (alternate)
 //
 // Future phases (uncomment and renumber as implemented):
 // #define LAYER_macOS      22  (skip if always macOS-native)
