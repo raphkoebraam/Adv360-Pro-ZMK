@@ -2,17 +2,17 @@
 
 ## Overview
 
-Sunaku-style Miryoku layout translated from [sunaku/glove80-keymaps](https://github.com/sunaku/glove80-keymaps) v52
-to the Kinesis Advantage 360 Pro (76 keys). Optimized for macOS with QWERTY as the default base layer.
+Custom layout for the Kinesis Advantage 360 Pro (76 keys), inspired by
+[sunaku/glove80-keymaps](https://github.com/sunaku/glove80-keymaps) v52.
+Optimized for macOS with QWERTY base.
 
-Key design principles (from sunaku):
-- **Home row mods on the row BELOW home** (ZXCV / M,./) — per-finger timing, bilateral enforcement
-- **Hyper key on index fingers** (F/J hold) — global shortcuts without modifier chording
-- **Thumb keys as layer-tap** — hold for layer access, tap for common keys
-- **Thumb combos** — two-thumb chords for sticky shift, caps word, alt-tab, etc.
-- **Alpha row combos** — cut/copy/paste/undo/redo on QWER and UIOP rows
+Design principles:
+- **Home row mods on the row BELOW home** (ZXCV / M,./) with per-finger timing
+- **Hyper on index fingers** (F/J hold) for global shortcuts
+- **Layer access via thumb hold** — 6 layers on thumb keys
+- **Combos** on alpha row (cut/copy/paste) and thumb keys (sticky shift, caps, alt-tab)
 
-OS Input Source: **ABC** (no dead keys — backtick, quote, tilde all type directly)
+OS Input Source: **ABC** (no dead keys)
 
 
 ## ZMK Version
@@ -40,125 +40,115 @@ Row 3: [46][47][48][49][50][51]        [52]      [53]        [54][55][56][57][58
 Row 4: [60][61][62][63][64]      [65][66][67]  [68][69][70]      [71][72][73][74][75]
 ```
 
-- 6, 7: Inner column top (left, right)
-- 20, 21: Inner column middle
-- 34, 39: Inner column home row
-- 35-36: Center cluster left pair
-- 37-38: Center cluster right pair
-- 52-53: Center thumb keys
-- 65-67: Left thumb cluster
-- 68-70: Right thumb cluster
+
+---
 
 
 ## Layer 0 — Default (QWERTY)
 
-### Visual Layout
+### What You Type (tap)
+
+Left and right hand shown separately for readability. Center/inner keys listed below.
 
 ```
-LEFT HAND                                                                     RIGHT HAND
-  =      1      2      3      4      5    [Mod]                       [Mod]     6      7      8      9      0      -
-  @      Q      W      E      R      T    [Scr3]                     [Scr5]    Y      U      I      O      P      \
- ESC     A      S      D    F|Hyp    G    [Scr4]   `   [#|Scr4] [=] [^|Scr5] [Lock]   H    J|Hyp    K      L      ;      '
- LSh  Z|Ctrl  X|Alt  C|Cmd  V|Shft   B          [Esc|Fn] [Del|Low]         N   M|Shft ,|Cmd  .|Alt  /|Ctrl  RSh
-[Mod]  End    PgUp   PgDn   Home       [Ret|Cur] [Tab|Num] [Bksp] [Ret|Sys] [Bksp] [Spc|Sym]      Left   Down    Up   Right [Mod]
+LEFT HAND                          RIGHT HAND
+ =    1    2    3    4    5         6    7    8    9    0    -
+ @    Q    W    E    R    T         Y    U    I    O    P    \
+ESC   A    S    D    F    G         H    J    K    L    ;    '
+LSh   Z    X    C    V    B         N    M    ,    .    /   RSh
+Mod  End  PgUp PgDn Home           Left Down  Up  Right   Mod
 ```
 
-### Row 0 — Number Row
+### What You Get When You Hold
 
-| Pos | Key | Notes |
-|-----|-----|-------|
-| 0 | `=` | Equals (standard `=`, Shift gives `+`) |
-| 1-5 | `1` `2` `3` `4` `5` | Standard numbers |
-| 6 | `mo Mod` | Inner column — momentary Mod/BT layer |
-| 7 | `mo Mod` | Inner column — momentary Mod/BT layer |
-| 8-12 | `6` `7` `8` `9` `0` | Standard numbers |
-| 13 | `-` | Minus (Shift gives `_`) |
+Only keys with hold behavior are listed. Everything else is tap-only.
 
-### Row 1 — Top Alpha
+```
+LEFT HAND (hold)                   RIGHT HAND (hold)
+ .    .    .    .    .    .         .    .    .    .    .    .
+ .    .    .    .    .    .         .    .    .    .    .    .
+ .    .    .    .   HYP   .         .   HYP   .    .    .    .
+ .   Ctrl  Alt  Cmd  Shft .         .   Shft Cmd  Alt  Ctrl  .
+ .    .    .    .    .              .    .    .    .    .
+```
 
-| Pos | Key | Notes |
-|-----|-----|-------|
-| 14 | `@` (`LS(N2)`) | Critical for ObjC/Swift (`@interface`, `@State`) |
-| 15-19 | `Q` `W` `E` `R` `T` | Standard QWERTY |
-| 20 | `Cmd+Shift+3` | macOS full screenshot |
-| 21 | `Cmd+Shift+5` | macOS screen recording |
-| 22-26 | `Y` `U` `I` `O` `P` | Standard QWERTY |
-| 27 | `\` | Backslash (Shift gives `|`) |
+`.` = no hold behavior (tap only)
 
-### Row 2 — Home Row
+### Inner Column + Center Keys
 
-| Pos | Key | Tap | Hold | Notes |
-|-----|-----|-----|------|-------|
-| 28 | ESC | `Escape` | — | |
-| 29-31 | A S D | letter | — | Plain keys (no mods — mods are on row below) |
-| 32 | F | `F` | Hyper (`Ctrl+Alt+Cmd+Shift`) | `left_index` behavior, 180ms tapping-term |
-| 33 | G | `G` | — | Plain key |
-| 34 | Scr4 | `Cmd+Shift+4` | — | Inner column — macOS area screenshot |
-| 35 | `` ` `` | Grave/backtick | — | Center cluster |
-| 36 | #/Scr4 | `#` (`LS(N3)`) | — | Mod-morph: Shift sends `Cmd+Shift+4` |
-| 37 | `=` | Equals | — | Center cluster |
-| 38 | ^/Scr5 | `^` (`LS(N6)`) | — | Mod-morph: Shift sends `Cmd+Shift+5` |
-| 39 | Lock | `Ctrl+Cmd+Q` | — | Inner column — macOS lock screen |
-| 40 | H | `H` | — | Plain key |
-| 41 | J | `J` | Hyper (`Ctrl+Alt+Cmd+Shift`) | `right_index` behavior, 180ms tapping-term |
-| 42-44 | K L ; | letter | — | Plain keys |
-| 45 | `'` | Single quote | — | Rust lifetimes, string delimiters |
+These are the keys between the two hands (positions 6-7, 20-21, 34-39, 52-53):
 
-### Row 3 — Below Home (Home Row Mods)
+```
+         LEFT INNER    CENTER CLUSTER    RIGHT INNER
+Row 0:     [Mod]                           [Mod]
+Row 1:     [Scr3]                          [Scr5]
+Row 2:     [Scr4]      `  [#|Scr4]  =  [^|Scr5]  [Lock]
+Row 3:            [Esc|Fn]  [Del|Low]
+```
 
-This is where the modifiers live. Per-finger timing from sunaku, positional enforcement
-(only opposite-hand keys trigger hold), `hold-trigger-on-release` enabled.
+| Pos | Tap | Hold/Shift | Notes |
+|-----|-----|------------|-------|
+| 6, 7 | — | `mo Mod` | BT/bootloader layer |
+| 20 | `Cmd+Shift+3` | — | macOS full screenshot |
+| 21 | `Cmd+Shift+5` | — | macOS screen recording |
+| 34 | `Cmd+Shift+4` | — | macOS area screenshot |
+| 35 | `` ` `` | — | Backtick |
+| 36 | `#` | Shift: `Cmd+Shift+4` | Mod-morph |
+| 37 | `=` | — | Equals |
+| 38 | `^` | Shift: `Cmd+Shift+5` | Mod-morph |
+| 39 | `Ctrl+Cmd+Q` | — | macOS lock screen |
+| 52 | **Escape** | **`mo Function`** | Center thumb left |
+| 53 | **Delete** | **`mo Lower`** | Center thumb right |
 
-| Pos | Tap | Hold | Finger | Tapping-term |
-|-----|-----|------|--------|-------------|
-| 46 | — | Left Shift | — | Dedicated shift key |
-| 47 | Z | Left Ctrl (`LCTL`) | Pinky | 270ms |
-| 48 | X | Left Alt (`LALT`) | Ring | 240ms |
-| 49 | C | Left Cmd (`LGUI`) | Middle | 210ms |
-| 50 | V | Left Shift (`LSFT`) | Index | 180ms |
-| 51 | B | — | — | Plain key |
-| 54 | N | — | — | Plain key |
-| 55 | M | Right Shift (`LSFT`) | Index | 180ms |
-| 56 | `,` | Right Cmd (`LGUI`) | Middle | 210ms |
-| 57 | `.` | Right Alt (`LALT`) | Ring | 240ms |
-| 58 | `/` | Right Ctrl (`LCTL`) | Pinky | 270ms |
-| 59 | — | Right Shift | — | Dedicated shift key |
+### Thumb Cluster
 
-**Modifier order** (pinky to index): Ctrl, Alt, Cmd, Shift — mirrored on both hands.
+```
+LEFT THUMB                         RIGHT THUMB
+  [Ret|Cursor] [Tab|Number] [Bksp]    [Ret|System] [Bksp] [Spc|Symbol]
+       65           66        67           68         69        70
+```
 
-**Misfire prevention** (three-layer defense):
-1. `require-prior-idle-ms = 150` — during typing flow (50-100ms between keys), hold-tap always resolves as tap
-2. Positional hold-trigger — same-hand keys always produce tap; only opposite-hand keys can trigger hold
+| Pos | Tap | Hold (layer) | Notes |
+|-----|-----|-------------|-------|
+| **65** | **Return** | **Cursor** | Primary left thumb |
+| **66** | **Tab** | **Number** | |
+| 67 | Backspace | — | |
+| **68** | **Return** | **System** | Primary right thumb |
+| 69 | Backspace | — | |
+| **70** | **Space** | **Symbol** | Primary right thumb |
+
+Thumb layer-tap: `balanced` flavor, 200ms tapping-term, 300ms quick-tap.
+
+
+### Home Row Mods Detail
+
+Mods live on Row 3 (below home row). Per-finger timing — faster fingers get shorter
+tapping-terms. Modifier order (pinky to index): **Ctrl, Alt, Cmd, Shift**.
+
+```
+LEFT:   Z=Ctrl  X=Alt  C=Cmd  V=Shift
+RIGHT:  /=Ctrl  .=Alt  ,=Cmd  M=Shift
+```
+
+| Finger | Keys | Mod | Tapping-term |
+|--------|------|-----|-------------|
+| Pinky | Z, / | Ctrl | 270ms |
+| Ring | X, . | Alt | 240ms |
+| Middle | C, , | Cmd | 210ms |
+| Index | V, M | Shift | 180ms |
+
+**Misfire prevention:**
+1. `require-prior-idle-ms = 150` — during typing flow, hold-tap always resolves as tap
+2. Positional hold-trigger — same-hand keys always produce tap; only opposite-hand triggers hold
 3. `hold-trigger-on-release` — allows deliberately chording two mods on the same hand
-4. `quick-tap-ms = 300` — double-tapping always produces two taps (generous window)
+4. `quick-tap-ms = 300` — double-tapping always produces two taps
 
 **Bilateral enforcement** (optional, currently disabled via `ENFORCE_BILATERAL`):
-When enabled, holding a mod activates a per-finger bilateral layer where same-hand keys
-are remapped to cancel the modifier, ensuring only cross-hand mod+key combinations work.
+When enabled, holding a mod activates a per-finger layer that cancels the modifier
+for same-hand keys, ensuring only cross-hand mod+key combinations work.
 
-### Center Thumb Keys (Row 3)
 
-| Pos | Tap | Hold | Sunaku equiv |
-|-----|-----|------|-------------|
-| 52 | `Escape` | `mo Function` | T1 (Esc/Function) |
-| 53 | `Delete` | `mo Lower` | T2 (Del/Lower) |
-
-### Row 4 — Bottom Row + Thumb Cluster
-
-| Pos | Tap | Hold | Sunaku equiv |
-|-----|-----|------|-------------|
-| 60 | — | `mo Mod` | — |
-| 61-64 | End, PgUp, PgDn, Home | — | — |
-| **65** | **Return** | **`mo Cursor`** | **T4 (main left thumb)** |
-| **66** | **Tab** | **`mo Number`** | **T5** |
-| **67** | Backspace | — | T6 |
-| **68** | **Return** | **`mo System`** | **T1 (main right thumb)** |
-| **69** | Backspace | — | T5 |
-| **70** | **Space** | **`mo Symbol`** | **T4 (main right thumb)** |
-| 71-74 | Left, Down, Up, Right | — | — |
-| 75 | — | `mo Mod` | — |
-
-Thumb layer-tap uses `balanced` flavor, 200ms tapping-term, 300ms quick-tap.
+---
 
 
 ## Layers
@@ -183,51 +173,65 @@ Thumb layer-tap uses `balanced` flavor, 200ms tapping-term, 300ms quick-tap.
 
 ## Combos
 
-### Alpha Row Combos (QWER / UIOP)
+### Alpha Row (QWER / UIOP)
 
 Mirrored on both hands. All use `timeout-ms = 50`, `require-prior-idle-ms = 150`.
 
-| Action | Left hand | Right hand |
-|--------|-----------|------------|
-| Cut (`Cmd+X`) | Q+W (15+16) | O+P (25+26) |
-| Copy (`Cmd+C`) | W+E (16+17) | I+O (24+25) |
-| Paste (`Cmd+V`) | E+R (17+18) | U+I (23+24) |
-| Undo (`Cmd+Z`) | W+R (16+18) | U+O (23+25) |
-| Redo (`Cmd+Shift+Z`) | Q+E (15+17) | I+P (24+26) |
-| Select All (`Cmd+A`) | Q+R (15+18) | U+P (23+26) |
+```
+LEFT:   Q --- W --- E --- R           RIGHT:  U --- I --- O --- P
+         cut  copy paste                       paste copy  cut
+              undo                                   undo
+         redo                                        redo
+        select all                            select all
+```
 
-### Home Row Combos
+| Action | Left | Right |
+|--------|------|-------|
+| Cut | Q+W | O+P |
+| Copy | W+E | I+O |
+| Paste | E+R | U+I |
+| Undo | W+R | U+O |
+| Redo | Q+E | I+P |
+| Select All | Q+R | U+P |
+
+### Home Row
 
 | Action | Keys |
 |--------|------|
 | Caps Word | F+J (32+41) |
 | Caps Lock | V+M (50+55) |
 
-### Thumb Combos (sunaku-style)
+### Thumb Combos
 
-Using sunaku's T1-T6 naming. All use `timeout-ms = 50`.
+Two-thumb chords. All use `timeout-ms = 50`.
+
+```
+LEFT THUMB:   [Esc|Fn=52] [Del|Low=53]     [Ret|Cur=65] [Tab|Num=66] [Bksp=67]
+RIGHT THUMB:  [Ret|Sys=68] [Bksp=69] [Spc|Sym=70]
+```
 
 | Combo | Left hand | Right hand | Action |
 |-------|-----------|------------|--------|
-| T1+T2 | 52+53 | — | Sticky AltGr (`&sk RALT`) |
-| T1+T4 | 52+65 | 68+70 | Alt-Tab switcher (LH) / Hyper (RH) |
-| T2+T5 | 53+66 | — | Ctrl-Tab switcher |
-| T1+T5 | 52+66 | 68+69 | Sticky Shift (one-shot) |
-| T4+T5 | 65+66 | 70+69 | Caps Word |
-| T2+T6 | 53+67 | — | Caps Lock |
-| T1+T2+T4 | 52+53+65 | 68+70+69 | Base layer reset (safety: 3-key chord) |
+| 52+53 | Esc + Del | — | Sticky AltGr |
+| 52+65 | Esc + Ret | — | Alt-Tab switcher |
+| 68+70 | — | Ret + Spc | Hyper |
+| 53+66 | Del + Tab | — | Ctrl-Tab switcher |
+| 52+66 | Esc + Tab | 68+69 (Ret + Bksp) | Sticky Shift (one-shot) |
+| 65+66 | Ret + Tab | 70+69 (Spc + Bksp) | Caps Word |
+| 53+67 | Del + Bksp | — | Caps Lock |
+| 52+53+65 | Esc+Del+Ret | 68+70+69 | Base layer reset (3-key safety) |
 
 
 ## Configuration Reference
 
-### Timing Constants (from `layers.dtsi`)
+### Timing Constants (`layers.dtsi`)
 
 | Constant | Value | Purpose |
 |----------|-------|---------|
-| `PINKY_HOLDING_TIME` | 270ms | Tapping-term for pinky HRMs (A/;, Z//) |
-| `RINGY_HOLDING_TIME` | 240ms | Tapping-term for ring HRMs (S/L, X/.) |
-| `MIDDY_HOLDING_TIME` | 210ms | Tapping-term for middle HRMs (D/K, C/,) |
-| `INDEX_HOLDING_TIME` | 180ms | Tapping-term for index HRMs (F/J, V/M) |
+| `PINKY_HOLDING_TIME` | 270ms | Tapping-term for pinky (Z/;, //.) |
+| `RINGY_HOLDING_TIME` | 240ms | Tapping-term for ring (X/., L/.) |
+| `MIDDY_HOLDING_TIME` | 210ms | Tapping-term for middle (C/,, D/K) |
+| `INDEX_HOLDING_TIME` | 180ms | Tapping-term for index (V/M, F/J) |
 | `HOMEY_HOLDING_TYPE` | tap-preferred | HRM flavor |
 | `HOMEY_STREAK_DECAY` | 150ms | `require-prior-idle-ms` for HRMs |
 | `HOMEY_REPEAT_DECAY` | 300ms | `quick-tap-ms` for HRMs |
@@ -244,13 +248,3 @@ Using sunaku's T1-T6 naming. All use `timeout-ms = 50`.
 | `config/layers.dtsi` | Layer defines, key positions, timing, mod assignments, HRM macros |
 | `config/macros.dtsi` | Included in `behaviors{}`: select_word/line, bilateral hold/tap, mod_tab |
 | `config/west.yml` | ZMK version/fork reference |
-
-### macOS Shortcuts (built into default layer)
-
-| Key | Position | Shortcut |
-|-----|----------|----------|
-| `Cmd+Shift+3` | 20 | Full screenshot |
-| `Cmd+Shift+4` | 34 | Area screenshot |
-| `Cmd+Shift+5` | 21 / Shift+38 | Screen recording |
-| `Cmd+Shift+4` | Shift+36 | Area screenshot (alt position) |
-| `Ctrl+Cmd+Q` | 39 | Lock screen |
