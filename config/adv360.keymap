@@ -6,6 +6,18 @@
 #include <dt-bindings/zmk/backlight.h>
 #include <dt-bindings/zmk/pointing.h>
 
+&mmv {
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <300>;
+    delay-ms = <0>;
+};
+
+&msc {
+    acceleration-exponent = <0>;
+    time-to-max-speed-ms = <300>;
+    delay-ms = <0>;
+};
+
 &caps_word {
     continue-list = <
         UNDERSCORE MINUS KP_MINUS
@@ -197,7 +209,7 @@
 &kp LS(N2)  &kp Q                &kp W            &kp E            &kp R                        &kp T         &kp LG(LS(N3))                                                                                  &kp LG(LS(N5))  &kp Y         &kp U                    &kp I                 &kp O              &kp P                   &kp BSLH
 &kp ESCAPE  &kp A                &kp S            &kp D            &hml LS(LA(LC(LEFT_GUI))) F  &kp G         &kp LG(LS(N4))  &kp GRAVE  &key_lh_t2               &kp EQUAL                    &key_rh_t2     &kp LC(LG(Q))   &kp H         &hmr LS(LA(LC(LGUI))) J  &kp K                 &kp L              &kp SEMI                &kp SQT
 &kp LSHFT   &hml LEFT_CONTROL Z  &hml LEFT_ALT X  &hml LEFT_GUI C  &hml LEFT_SHIFT V            &kp B                                    &hml LEFT_GUI SPACE      &hmr RIGHT_GUI LS(NUMBER_4)                                 &kp N         &hmr RIGHT_SHIFT M       &hmr RIGHT_GUI COMMA  &hmr LEFT_ALT DOT  &hmr LEFT_CONTROL FSLH  &kp RSHFT
-&mo 2       &kp END              &kp PAGE_UP      &kp PAGE_DOWN    &kp HOME                                   &lt 1 RETURN    &kp TAB    &kp BACKSPACE            &kp RETURN                   &kp BACKSPACE  &lt 4 SPACE                   &kp LEFT                 &kp DOWN              &kp UP             &kp RIGHT               &mo 2
+&mo 2       &kp END              &kp PAGE_UP      &kp PAGE_DOWN    &kp HOME                                   &lt 1 RETURN    &kp TAB    &kp BACKSPACE            &kp RETURN                   &lt 5 BACKSPACE  &lt 4 SPACE                   &kp LEFT                 &kp DOWN              &kp UP             &kp RIGHT               &mo 2
             >;
         };
 
@@ -216,7 +228,7 @@
 &kp F1  &kp F2                &kp F3          &kp F4            &kp F5      &kp F6                &tog 1                                      &mo 3   &kp F7  &kp F8      &kp F9                     &kp F10                  &kp F11  &kp F12
 &trans  &trans                &trans          &trans            &trans      &trans                &none                                       &none   &trans  &trans      &kp LS(LA(C_VOLUME_DOWN))  &kp LS(LA(C_VOLUME_UP))  &trans   &trans
 &trans  &kp C_BRIGHTNESS_DEC  &kp C_PREVIOUS  &kp C_PLAY_PAUSE  &kp C_NEXT  &kp C_BRIGHTNESS_INC  &none   &trans  &trans      &trans  &trans  &none   &trans  &kp C_MUTE  &kp C_VOLUME_DOWN          &kp C_VOLUME_UP          &trans   &trans
-&trans  &trans                &trans          &trans            &trans      &trans                                &trans      &trans                  &trans  &trans      &trans                     &trans                   &trans   &trans
+&trans  &trans                &trans          &trans            &trans      &tog 5                                &trans      &trans                  &trans  &trans      &trans                     &trans                   &trans   &trans
 &trans  &trans                &trans          &trans            &trans                            &trans  &trans  &trans      &trans  &trans  &trans          &trans      &trans                     &trans                   &trans   &trans
             >;
         };
@@ -238,6 +250,16 @@
 &kp POUND        &kp CARET         &kp EQUAL             &kp UNDERSCORE         &kp DOLLAR         &kp STAR   &trans       &kp BACKSLASH  &kp DOT               &trans  &trans  &trans  &kp COMMA  &kp BACKSPACE      &kp TAB           &kp SPACE     &kp ENTER         &trans
 &kp TILDE        &kp LESS_THAN     &kp PIPE              &kp MINUS              &kp GREATER_THAN   &kp SLASH                              &triple_backtick      &trans                  &kp SEMI   &kp DOUBLE_QUOTES  &kp SINGLE_QUOTE  &kp GRAVE     &kp BACKSLASH     &trans
 &dot_dot         &kp AMPS          &kp SINGLE_QUOTE      &kp DOUBLE_QUOTES      &kp PLUS                      &kp PERCENT  &kp COLON      &kp AT                &trans  &trans  &trans             &kp LEFT_SHIFT     &kp LEFT_GUI      &kp LEFT_ALT  &kp LEFT_CONTROL  &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+&none  &none           &none            &none            &none             &none            &none                                                                                                                     &none  &none           &none            &none          &none            &none             &none
+&none  &none           &msc SCRL_LEFT   &mmv MOVE_UP     &msc SCRL_RIGHT   &none            &none                                                                                                                     &none  &none           &msc SCRL_LEFT   &mkp LCLK      &mkp MCLK        &mkp RCLK         &msc SCRL_RIGHT
+&none  &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN   &mmv MOVE_RIGHT   &msc SCRL_DOWN   &none      &none  &none          &none                      &none          &none      &none  &msc SCRL_UP    &mmv MOVE_LEFT   &mmv MOVE_DOWN &mmv MOVE_UP     &mmv MOVE_RIGHT   &msc SCRL_DOWN
+&none  &none           &kp LG(X)        &kp LG(C)        &kp LG(V)         &none                                   &none          &none                                          &none  &kp LSHFT       &kp LGUI         &kp LALT       &kp LCTRL        &none
+&none  &none           &none            &none            &none                              &mkp LCLK  &mkp RCLK  &mkp MB4       &tog 5                 &none          &mkp MCLK         &none           &none            &none          &none            &none
             >;
         };
     };
